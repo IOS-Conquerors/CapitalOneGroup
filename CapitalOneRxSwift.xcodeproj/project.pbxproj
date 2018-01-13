@@ -8,20 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		04DE1B27200A9E3D004E05F4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DE1B26200A9E3D004E05F4 /* AppDelegate.swift */; };
-		04DE1B29200A9E3D004E05F4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DE1B28200A9E3D004E05F4 /* ViewController.swift */; };
+		04DE1B29200A9E3D004E05F4 /* PageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DE1B28200A9E3D004E05F4 /* PageController.swift */; };
 		04DE1B2C200A9E3D004E05F4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04DE1B2A200A9E3D004E05F4 /* Main.storyboard */; };
 		04DE1B2E200A9E3D004E05F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04DE1B2D200A9E3D004E05F4 /* Assets.xcassets */; };
 		04DE1B31200A9E3D004E05F4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04DE1B2F200A9E3D004E05F4 /* LaunchScreen.storyboard */; };
+		04DE1B3D200A9ED3004E05F4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DE1B3C200A9ED3004E05F4 /* Constants.swift */; };
+		A80324CDD0D3EA99DB698997 /* Pods_CapitalOneRxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DC767F3C3C892F237FFD64D /* Pods_CapitalOneRxSwift.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		04DE1B23200A9E3D004E05F4 /* CapitalOneRxSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CapitalOneRxSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04DE1B26200A9E3D004E05F4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		04DE1B28200A9E3D004E05F4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		04DE1B28200A9E3D004E05F4 /* PageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageController.swift; sourceTree = "<group>"; };
 		04DE1B2B200A9E3D004E05F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		04DE1B2D200A9E3D004E05F4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		04DE1B30200A9E3D004E05F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		04DE1B32200A9E3D004E05F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04DE1B3C200A9ED3004E05F4 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		4CF83793E25C32439E960515 /* Pods-CapitalOneRxSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CapitalOneRxSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-CapitalOneRxSwift/Pods-CapitalOneRxSwift.release.xcconfig"; sourceTree = "<group>"; };
+		4DC767F3C3C892F237FFD64D /* Pods_CapitalOneRxSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CapitalOneRxSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D5E481D1DB96055E676D6662 /* Pods-CapitalOneRxSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CapitalOneRxSwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CapitalOneRxSwift/Pods-CapitalOneRxSwift.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +35,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A80324CDD0D3EA99DB698997 /* Pods_CapitalOneRxSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0283E4B543F2ABFE409565E5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4DC767F3C3C892F237FFD64D /* Pods_CapitalOneRxSwift.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		04DE1B1A200A9E3D004E05F4 = {
 			isa = PBXGroup;
 			children = (
 				04DE1B25200A9E3D004E05F4 /* CapitalOneRxSwift */,
 				04DE1B24200A9E3D004E05F4 /* Products */,
+				AEFE8D559458655E2A50A510 /* Pods */,
+				0283E4B543F2ABFE409565E5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +71,56 @@
 		04DE1B25200A9E3D004E05F4 /* CapitalOneRxSwift */ = {
 			isa = PBXGroup;
 			children = (
-				04DE1B26200A9E3D004E05F4 /* AppDelegate.swift */,
-				04DE1B28200A9E3D004E05F4 /* ViewController.swift */,
-				04DE1B2A200A9E3D004E05F4 /* Main.storyboard */,
+				04DE1B3A200A9E6F004E05F4 /* Controller */,
+				04DE1B39200A9E4F004E05F4 /* Model */,
+				04DE1B38200A9E44004E05F4 /* View */,
 				04DE1B2D200A9E3D004E05F4 /* Assets.xcassets */,
-				04DE1B2F200A9E3D004E05F4 /* LaunchScreen.storyboard */,
 				04DE1B32200A9E3D004E05F4 /* Info.plist */,
 			);
 			path = CapitalOneRxSwift;
+			sourceTree = "<group>";
+		};
+		04DE1B38200A9E44004E05F4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				04DE1B2A200A9E3D004E05F4 /* Main.storyboard */,
+				04DE1B2F200A9E3D004E05F4 /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		04DE1B39200A9E4F004E05F4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				04DE1B26200A9E3D004E05F4 /* AppDelegate.swift */,
+				04DE1B3C200A9ED3004E05F4 /* Constants.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		04DE1B3A200A9E6F004E05F4 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				04DE1B28200A9E3D004E05F4 /* PageController.swift */,
+				04DE1B3B200A9E80004E05F4 /* PageModel */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		04DE1B3B200A9E80004E05F4 /* PageModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = PageModel;
+			sourceTree = "<group>";
+		};
+		AEFE8D559458655E2A50A510 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D5E481D1DB96055E676D6662 /* Pods-CapitalOneRxSwift.debug.xcconfig */,
+				4CF83793E25C32439E960515 /* Pods-CapitalOneRxSwift.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +130,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 04DE1B35200A9E3D004E05F4 /* Build configuration list for PBXNativeTarget "CapitalOneRxSwift" */;
 			buildPhases = (
+				3E8B362B64AAA0B74066CB61 /* [CP] Check Pods Manifest.lock */,
 				04DE1B1F200A9E3D004E05F4 /* Sources */,
 				04DE1B20200A9E3D004E05F4 /* Frameworks */,
 				04DE1B21200A9E3D004E05F4 /* Resources */,
+				08A9A3C8F0F5E138D41D5469 /* [CP] Embed Pods Frameworks */,
+				4E347EB2A540807814F544B1 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -131,13 +193,74 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		08A9A3C8F0F5E138D41D5469 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-CapitalOneRxSwift/Pods-CapitalOneRxSwift-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/RxAlamofire/RxAlamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAlamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CapitalOneRxSwift/Pods-CapitalOneRxSwift-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3E8B362B64AAA0B74066CB61 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CapitalOneRxSwift-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4E347EB2A540807814F544B1 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CapitalOneRxSwift/Pods-CapitalOneRxSwift-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		04DE1B1F200A9E3D004E05F4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04DE1B29200A9E3D004E05F4 /* ViewController.swift in Sources */,
+				04DE1B29200A9E3D004E05F4 /* PageController.swift in Sources */,
 				04DE1B27200A9E3D004E05F4 /* AppDelegate.swift in Sources */,
+				04DE1B3D200A9ED3004E05F4 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,6 +395,7 @@
 		};
 		04DE1B36200A9E3D004E05F4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D5E481D1DB96055E676D6662 /* Pods-CapitalOneRxSwift.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -286,6 +410,7 @@
 		};
 		04DE1B37200A9E3D004E05F4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4CF83793E25C32439E960515 /* Pods-CapitalOneRxSwift.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
