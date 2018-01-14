@@ -7,14 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04D536AC200B387500067D37 /* CreditCardNameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D536AB200B387500067D37 /* CreditCardNameCell.swift */; };
+		04D536AE200B3CAD00067D37 /* CreditCardDescriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D536AD200B3CAD00067D37 /* CreditCardDescriptionCell.swift */; };
 		04DE1B27200A9E3D004E05F4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DE1B26200A9E3D004E05F4 /* AppDelegate.swift */; };
-		04DE1B29200A9E3D004E05F4 /* PageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DE1B28200A9E3D004E05F4 /* PageController.swift */; };
+		04DE1B29200A9E3D004E05F4 /* PagePersonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DE1B28200A9E3D004E05F4 /* PagePersonController.swift */; };
 		04DE1B2C200A9E3D004E05F4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04DE1B2A200A9E3D004E05F4 /* Main.storyboard */; };
 		04DE1B2E200A9E3D004E05F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04DE1B2D200A9E3D004E05F4 /* Assets.xcassets */; };
 		04DE1B31200A9E3D004E05F4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04DE1B2F200A9E3D004E05F4 /* LaunchScreen.storyboard */; };
 		04DE1B3D200A9ED3004E05F4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DE1B3C200A9ED3004E05F4 /* Constants.swift */; };
 		04DE1B3F200AD89E004E05F4 /* PersonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DE1B3E200AD89E004E05F4 /* PersonController.swift */; };
-		04DE1B43200B082C004E05F4 /* CreditCardCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DE1B42200B082C004E05F4 /* CreditCardCollectionView.swift */; };
+		04DE1B43200B082C004E05F4 /* CreditCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DE1B42200B082C004E05F4 /* CreditCardView.swift */; };
 		84EF2EE4200B2E3100A5684B /* NetworkRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EF2EE3200B2E3100A5684B /* NetworkRequests.swift */; };
 		84EF2EE6200B574F00A5684B /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EF2EE5200B574F00A5684B /* NetworkError.swift */; };
 		84EF2EE8200B57C700A5684B /* CallType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EF2EE7200B57C700A5684B /* CallType.swift */; };
@@ -23,16 +25,18 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		04D536AB200B387500067D37 /* CreditCardNameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardNameCell.swift; sourceTree = "<group>"; };
+		04D536AD200B3CAD00067D37 /* CreditCardDescriptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardDescriptionCell.swift; sourceTree = "<group>"; };
 		04DE1B23200A9E3D004E05F4 /* CapitalOneRxSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CapitalOneRxSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04DE1B26200A9E3D004E05F4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		04DE1B28200A9E3D004E05F4 /* PageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageController.swift; sourceTree = "<group>"; };
+		04DE1B28200A9E3D004E05F4 /* PagePersonController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagePersonController.swift; sourceTree = "<group>"; };
 		04DE1B2B200A9E3D004E05F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		04DE1B2D200A9E3D004E05F4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		04DE1B30200A9E3D004E05F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		04DE1B32200A9E3D004E05F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04DE1B3C200A9ED3004E05F4 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		04DE1B3E200AD89E004E05F4 /* PersonController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonController.swift; sourceTree = "<group>"; };
-		04DE1B42200B082C004E05F4 /* CreditCardCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardCollectionView.swift; sourceTree = "<group>"; };
+		04DE1B42200B082C004E05F4 /* CreditCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardView.swift; sourceTree = "<group>"; };
 		4CF83793E25C32439E960515 /* Pods-CapitalOneRxSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CapitalOneRxSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-CapitalOneRxSwift/Pods-CapitalOneRxSwift.release.xcconfig"; sourceTree = "<group>"; };
 		4DC767F3C3C892F237FFD64D /* Pods_CapitalOneRxSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CapitalOneRxSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		84EF2EE3200B2E3100A5684B /* NetworkRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequests.swift; sourceTree = "<group>"; };
@@ -60,6 +64,15 @@
 				4DC767F3C3C892F237FFD64D /* Pods_CapitalOneRxSwift.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		04D536AA200B386800067D37 /* CustomCells */ = {
+			isa = PBXGroup;
+			children = (
+				04D536AB200B387500067D37 /* CreditCardNameCell.swift */,
+				04D536AD200B3CAD00067D37 /* CreditCardDescriptionCell.swift */,
+			);
+			path = CustomCells;
 			sourceTree = "<group>";
 		};
 		04DE1B1A200A9E3D004E05F4 = {
@@ -105,6 +118,7 @@
 		04DE1B39200A9E4F004E05F4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				04D536AA200B386800067D37 /* CustomCells */,
 				04DE1B26200A9E3D004E05F4 /* AppDelegate.swift */,
 				04DE1B3C200A9ED3004E05F4 /* Constants.swift */,
 			);
@@ -124,7 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				04DE1B3E200AD89E004E05F4 /* PersonController.swift */,
-				04DE1B28200A9E3D004E05F4 /* PageController.swift */,
+				04DE1B28200A9E3D004E05F4 /* PagePersonController.swift */,
 			);
 			path = PageModel;
 			sourceTree = "<group>";
@@ -132,7 +146,7 @@
 		04DE1B44200B0837004E05F4 /* CreditCardView */ = {
 			isa = PBXGroup;
 			children = (
-				04DE1B42200B082C004E05F4 /* CreditCardCollectionView.swift */,
+				04DE1B42200B082C004E05F4 /* CreditCardView.swift */,
 			);
 			path = CreditCardView;
 			sourceTree = "<group>";
@@ -292,12 +306,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+<<<<<<< HEAD
+				04DE1B43200B082C004E05F4 /* CreditCardView.swift in Sources */,
+				04D536AC200B387500067D37 /* CreditCardNameCell.swift in Sources */,
+=======
 				04DE1B43200B082C004E05F4 /* CreditCardCollectionView.swift in Sources */,
 				84EF2EE6200B574F00A5684B /* NetworkError.swift in Sources */,
+>>>>>>> cb9783f4df28e85f6eac0dfbfd81e4b35242c4a2
 				04DE1B3F200AD89E004E05F4 /* PersonController.swift in Sources */,
+				04D536AE200B3CAD00067D37 /* CreditCardDescriptionCell.swift in Sources */,
 				84EF2EE4200B2E3100A5684B /* NetworkRequests.swift in Sources */,
+<<<<<<< HEAD
+				04DE1B29200A9E3D004E05F4 /* PagePersonController.swift in Sources */,
+=======
 				84EF2EEA200B57F500A5684B /* ReturnType.swift in Sources */,
 				04DE1B29200A9E3D004E05F4 /* PageController.swift in Sources */,
+>>>>>>> cb9783f4df28e85f6eac0dfbfd81e4b35242c4a2
 				04DE1B27200A9E3D004E05F4 /* AppDelegate.swift in Sources */,
 				04DE1B3D200A9ED3004E05F4 /* Constants.swift in Sources */,
 				84EF2EE8200B57C700A5684B /* CallType.swift in Sources */,

@@ -39,13 +39,10 @@ class PersonController:UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        
         checkButton.layer.cornerRadius = 10
         checkButton.clipsToBounds = true
         checkButton.layer.borderWidth = 1
         checkButton.layer.borderColor = UIColor.black.cgColor
-        
         
         _ = pageIndex.asObservable().subscribe {
             (onNext) in
