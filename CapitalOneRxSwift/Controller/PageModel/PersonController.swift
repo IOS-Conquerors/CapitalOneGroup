@@ -27,7 +27,6 @@ class PersonController:UIViewController{
             print(Constants.highNumber)
             //call network with highNumber
             break
-            
         default:
             print("Error")
             break
@@ -39,6 +38,7 @@ class PersonController:UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         
         
         checkButton.layer.cornerRadius = 10

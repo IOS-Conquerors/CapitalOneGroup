@@ -1,0 +1,6 @@
+framework module Pods_CapitalOneRxSwift {
+  umbrella header "Pods-CapitalOneRxSwift-umbrella.h"
+
+  export *
+  module * { export * }
+}
