@@ -17,6 +17,7 @@ class PagePersonController: UIPageViewController, UIPageViewControllerDataSource
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        dataSource = self
         
         if let First = orderedViewControllers.first {
             setViewControllers([First],

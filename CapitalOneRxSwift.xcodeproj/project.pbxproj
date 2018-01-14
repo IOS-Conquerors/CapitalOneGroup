@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		04D536AC200B387500067D37 /* CreditCardNameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D536AB200B387500067D37 /* CreditCardNameCell.swift */; };
+		04438222200C099C00AE6F48 /* CreditCardNameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D536AB200B387500067D37 /* CreditCardNameCell.swift */; };
 		04D536AE200B3CAD00067D37 /* CreditCardDescriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D536AD200B3CAD00067D37 /* CreditCardDescriptionCell.swift */; };
 		04DE1B27200A9E3D004E05F4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DE1B26200A9E3D004E05F4 /* AppDelegate.swift */; };
 		04DE1B29200A9E3D004E05F4 /* PagePersonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DE1B28200A9E3D004E05F4 /* PagePersonController.swift */; };
@@ -306,15 +306,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04DE1B43200B082C004E05F4 /* CreditCardCollectionView.swift in Sources */,
+				04DE1B43200B082C004E05F4 /* CreditCardView.swift in Sources */,
 				84EF2EE6200B574F00A5684B /* NetworkError.swift in Sources */,
 				04DE1B3F200AD89E004E05F4 /* PersonController.swift in Sources */,
 				04D536AE200B3CAD00067D37 /* CreditCardDescriptionCell.swift in Sources */,
 				84EF2EE4200B2E3100A5684B /* NetworkRequests.swift in Sources */,
 				84EF2EEA200B57F500A5684B /* ReturnType.swift in Sources */,
-				04DE1B29200A9E3D004E05F4 /* PageController.swift in Sources */,
+				04DE1B29200A9E3D004E05F4 /* PagePersonController.swift in Sources */,
 				04DE1B27200A9E3D004E05F4 /* AppDelegate.swift in Sources */,
 				04DE1B3D200A9ED3004E05F4 /* Constants.swift in Sources */,
+				04438222200C099C00AE6F48 /* CreditCardNameCell.swift in Sources */,
 				84EF2EE8200B57C700A5684B /* CallType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
