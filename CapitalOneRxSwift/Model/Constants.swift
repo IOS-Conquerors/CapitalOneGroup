@@ -10,7 +10,7 @@ import Foundation
 
 
 class Constants{
-    static let lowNumber = "5555555555"
-    static let medNumber = "6666666666"
-    static let highNumber = "7777777777"
+    static let lowNumber = "6666666666"
+    static let medNumber = "7777777777"
+    static let highNumber = "8888888888"
 }
