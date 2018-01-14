@@ -9,13 +9,38 @@
 import UIKit
 
 
-class CreditCardCollectionView: UIViewController{
+class CreditCardView: UIViewController{
+    @IBOutlet weak var tableView:UITableView!
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print("SADFADSFASDFASDFA")
+        
+        
     }
     
     
 }
+
+typealias TableFunctions = CreditCardView
+extension TableFunctions:UITableViewDelegate, UITableViewDataSource{
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let CreditNameCell = tableView.dequeueReusableCell(withIdentifier: "CreditCardName") as? CreditcardNameCell else {fatalError("No cell")}
+        
+        return CreditNameCell
+    }
+    
+    
+    
+    
+    
+    
+    
+}
+

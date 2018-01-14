@@ -6,4 +6,11 @@
 //  Copyright © 2018 Ghost World. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+
+class CreditCardDescriptionCell:UITableViewCell{
+    @IBOutlet weak var CreditDescription:UITableViewCell! 
+}
+
+
