@@ -9,9 +9,13 @@
 import UIKit
 
 
-class CreditCardCollectionView{
+class CreditCardCollectionView: UIViewController{
     
-    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        print("SADFADSFASDFASDFA")
+    }
     
     
 }

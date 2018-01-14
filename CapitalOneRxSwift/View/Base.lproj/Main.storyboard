@@ -35,7 +35,7 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pJT-aG-4FS">
-                                <rect key="frame" x="78.5" y="315.5" width="218" height="36"/>
+                                <rect key="frame" x="78" y="265" width="218" height="36"/>
                                 <color key="backgroundColor" red="0.13992860913276672" green="0.67810225486755371" blue="0.92968302965164185" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="  Check Card Availability  ">
@@ -49,9 +49,9 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="pJT-aG-4FS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6Lf-Br-M8V"/>
+                            <constraint firstItem="pJT-aG-4FS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="KI6-sM-TWF"/>
+                            <constraint firstItem="pJT-aG-4FS" firstAttribute="top" secondItem="Qk1-Ri-V26" secondAttribute="bottom" constant="50" id="Ktr-hB-7ma"/>
                             <constraint firstItem="Qk1-Ri-V26" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="M5m-5O-3Wg"/>
-                            <constraint firstItem="pJT-aG-4FS" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Ti7-se-erb"/>
                             <constraint firstItem="Qk1-Ri-V26" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="15" id="wO9-Zb-xfN"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
