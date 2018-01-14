@@ -17,11 +17,6 @@ class PageController: UIPageViewController, UIPageViewControllerDataSource {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        dataSource = self
-        UserDefaults.standard.removeObject(forKey: "accessToken")
-        NetworkRequests.makeCall(.getProducts, nil) { (returnType, error) in
-            print("Call complete")
-        }
         
         if let First = orderedViewControllers.first {
             setViewControllers([First],
