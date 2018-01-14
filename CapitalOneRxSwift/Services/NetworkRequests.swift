@@ -9,6 +9,11 @@
 import Foundation
 
 class NetworkRequests {
+    public static func makeCall() {
+        
+    }
+    //Switch to naming incoming argument function
+    //UserDefaults to save accesstoken?? :OOO
     static func getAccessToken() {
         guard let url = URL(string: "https://api-sandbox.capitalone.com/oauth2/token") else {return}
         var request = URLRequest(url: url)
@@ -41,6 +46,42 @@ class NetworkRequests {
             guard let accessToken = json["access_token"] as? String else {return}
             print(accessToken)
             //Save accesstoken
-            }.resume()
+            NetworkRequests.getAPI(accessToken)
+        }.resume()
     }
+    
+    static func getAPI(_ accessToken: String) {
+        guard let url = URL(string: "https://api-sandbox.capitalone.com/credit-offers/products?limit=50&offset=0") else {return}
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        request.addValue("Bearer \(accessToken)", forHTTPHeaderField: "Authorization")
+        request.addValue("application/json;v=3", forHTTPHeaderField: "Accept")
+        request.addValue("en-US", forHTTPHeaderField: "Accept-Language")
+        URLSession.shared.dataTask(with: request) {
+            (data, response, error) in
+            guard error == nil else {
+                print("error")
+                return
+            }
+            guard let statusCode = (response as? HTTPURLResponse)?.statusCode else {
+                print("no response")
+                return
+            }
+            guard statusCode == 200 else {
+                print("network error \(statusCode)")
+                return
+            }
+            guard let data = data else {
+                print("no data")
+                return
+            }
+            guard let jsonObject = try? JSONSerialization.jsonObject(with: data) as? [String:Any] else {
+                print("error parsing data")
+                return
+            }
+            print(jsonObject!)
+        }.resume()
+    }
+    
+    
 }
