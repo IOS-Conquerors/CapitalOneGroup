@@ -9,5 +9,6 @@
 import Foundation
 
 enum CallType {
-    case getProducts
+    case allCardNames
+    case secondType
 }

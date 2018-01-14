@@ -9,5 +9,6 @@
 import Foundation
 
 enum ReturnType {
-    case products([String])
+    case allCardNames([String])
+    case secondType
 }
