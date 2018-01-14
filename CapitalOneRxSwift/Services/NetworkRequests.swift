@@ -9,18 +9,29 @@
 import Foundation
 
 class NetworkRequests {
-    public static func makeCall(_ callType:CallType, _ returnType: ReturnType, completion: @escaping (ReturnType?, Error?) -> ()) {
+    //Public function that acts as a facade for Network Calls.
+    //Can be subclassed and overriden to make a new facade if desired
+    public class func makeCall(_ callType:CallType, _ url: String?, completion: @escaping (ReturnType?, Error?) -> ()) {
         //Check if there is not an accessToken yet
-        if true {
-            getAccessToken()
+        guard UserDefaults.standard.string(forKey: "accessToken") != nil else {
+            getAccessToken() {
+                print("got access key")
+                makeCall(callType, url, completion: completion)
+            }
+            return
         }
+        //Make the Call to API with the access token
+        guard let accessToken = UserDefaults.standard.string(forKey: "accessToken") else {return}
         switch callType {
-        case .getProducts: break //getAPI(//UserDefaults accessToken, completion: completion)
+        case .getProducts:
+            getAPI(accessToken, completion: completion)
         }
     }
-    //Switch to naming incoming argument function
-    //UserDefaults to save accesstoken?? :OOO
-    static func getAccessToken() {
+    
+    
+    //MARK: Private Networking Functions
+    private static func getAccessToken(completion: @escaping ()->()) {
+        print("Getting access key")
         guard let url = URL(string: "https://api-sandbox.capitalone.com/oauth2/token") else {return}
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
@@ -50,13 +61,13 @@ class NetworkRequests {
             guard let jsonObj = try? JSONSerialization.jsonObject(with: data) as? [String:Any] else {return}
             guard let json = jsonObj else {return}
             guard let accessToken = json["access_token"] as? String else {return}
-            print(accessToken)
             //Save accesstoken
-            NetworkRequests.getAPI(accessToken)
+            UserDefaults.standard.set(accessToken, forKey: "accessToken")
+            completion()
         }.resume()
     }
     
-    static func getAPI(_ accessToken: String) {
+    private static func getAPI(_ accessToken: String, completion: @escaping (ReturnType?, Error?)->()) {
         guard let url = URL(string: "https://api-sandbox.capitalone.com/credit-offers/products?limit=50&offset=0") else {return}
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
@@ -85,7 +96,8 @@ class NetworkRequests {
                 print("error parsing data")
                 return
             }
-            print(jsonObject!)
+            //print(jsonObject!)
+            completion(nil, nil)
         }.resume()
     }
     
