@@ -30,8 +30,8 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Qk1-Ri-V26">
                                 <rect key="frame" x="62.5" y="35" width="250" height="180"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="250" id="ocG-N2-Xpc"/>
-                                    <constraint firstAttribute="height" constant="180" id="pCm-9J-pvw"/>
+                                    <constraint firstAttribute="height" constant="180" id="r1z-ob-vlk"/>
+                                    <constraint firstAttribute="width" constant="250" id="s1j-cE-cx2"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pJT-aG-4FS">
@@ -50,11 +50,9 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="pJT-aG-4FS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6Lf-Br-M8V"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Qk1-Ri-V26" secondAttribute="trailing" constant="62.5" id="8eH-PE-9aJ"/>
+                            <constraint firstItem="Qk1-Ri-V26" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="M5m-5O-3Wg"/>
                             <constraint firstItem="pJT-aG-4FS" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Ti7-se-erb"/>
-                            <constraint firstItem="Qk1-Ri-V26" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="62.5" id="ceT-Zo-Szm"/>
-                            <constraint firstItem="Qk1-Ri-V26" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="iPI-3y-t9p"/>
-                            <constraint firstItem="Qk1-Ri-V26" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="15" id="znE-r9-4Pv"/>
+                            <constraint firstItem="Qk1-Ri-V26" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="15" id="wO9-Zb-xfN"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
