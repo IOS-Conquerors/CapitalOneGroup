@@ -17,9 +17,6 @@ class PageController: UIPageViewController, UIPageViewControllerDataSource {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        dataSource = self
-        
-        NetworkRequests.getAccessToken()
         
         if let First = orderedViewControllers.first {
             setViewControllers([First],
