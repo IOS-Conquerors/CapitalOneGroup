@@ -9,8 +9,14 @@
 import Foundation
 
 class NetworkRequests {
-    public static func makeCall() {
-        
+    public static func makeCall(_ callType:CallType, _ returnType: ReturnType, completion: @escaping (ReturnType?, Error?) -> ()) {
+        //Check if there is not an accessToken yet
+        if true {
+            getAccessToken()
+        }
+        switch callType {
+        case .getProducts: break //getAPI(//UserDefaults accessToken, completion: completion)
+        }
     }
     //Switch to naming incoming argument function
     //UserDefaults to save accesstoken?? :OOO
