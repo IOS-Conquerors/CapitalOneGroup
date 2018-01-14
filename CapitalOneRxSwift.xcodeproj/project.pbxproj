@@ -15,6 +15,7 @@
 		04DE1B3D200A9ED3004E05F4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DE1B3C200A9ED3004E05F4 /* Constants.swift */; };
 		04DE1B3F200AD89E004E05F4 /* PersonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DE1B3E200AD89E004E05F4 /* PersonController.swift */; };
 		04DE1B43200B082C004E05F4 /* CreditCardCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DE1B42200B082C004E05F4 /* CreditCardCollectionView.swift */; };
+		84EF2EE4200B2E3100A5684B /* NetworkRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EF2EE3200B2E3100A5684B /* NetworkRequests.swift */; };
 		A80324CDD0D3EA99DB698997 /* Pods_CapitalOneRxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DC767F3C3C892F237FFD64D /* Pods_CapitalOneRxSwift.framework */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +32,7 @@
 		04DE1B42200B082C004E05F4 /* CreditCardCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardCollectionView.swift; sourceTree = "<group>"; };
 		4CF83793E25C32439E960515 /* Pods-CapitalOneRxSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CapitalOneRxSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-CapitalOneRxSwift/Pods-CapitalOneRxSwift.release.xcconfig"; sourceTree = "<group>"; };
 		4DC767F3C3C892F237FFD64D /* Pods_CapitalOneRxSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CapitalOneRxSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		84EF2EE3200B2E3100A5684B /* NetworkRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequests.swift; sourceTree = "<group>"; };
 		D5E481D1DB96055E676D6662 /* Pods-CapitalOneRxSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CapitalOneRxSwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CapitalOneRxSwift/Pods-CapitalOneRxSwift.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -75,6 +77,7 @@
 		04DE1B25200A9E3D004E05F4 /* CapitalOneRxSwift */ = {
 			isa = PBXGroup;
 			children = (
+				84EF2EE2200B2E2200A5684B /* Services */,
 				04DE1B3A200A9E6F004E05F4 /* Controller */,
 				04DE1B39200A9E4F004E05F4 /* Model */,
 				04DE1B38200A9E44004E05F4 /* View */,
@@ -126,6 +129,14 @@
 				04DE1B42200B082C004E05F4 /* CreditCardCollectionView.swift */,
 			);
 			path = CreditCardView;
+			sourceTree = "<group>";
+		};
+		84EF2EE2200B2E2200A5684B /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				84EF2EE3200B2E3100A5684B /* NetworkRequests.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		AEFE8D559458655E2A50A510 /* Pods */ = {
@@ -274,6 +285,7 @@
 			files = (
 				04DE1B43200B082C004E05F4 /* CreditCardCollectionView.swift in Sources */,
 				04DE1B3F200AD89E004E05F4 /* PersonController.swift in Sources */,
+				84EF2EE4200B2E3100A5684B /* NetworkRequests.swift in Sources */,
 				04DE1B29200A9E3D004E05F4 /* PageController.swift in Sources */,
 				04DE1B27200A9E3D004E05F4 /* AppDelegate.swift in Sources */,
 				04DE1B3D200A9ED3004E05F4 /* Constants.swift in Sources */,
