@@ -10,14 +10,14 @@ import UIKit
 import RxSwift
 import RxCocoa
 
+var pageIndex:Variable<Int> = Variable(0)
+
 //This will be for the initial page controller that shows you the 3 different people you can click
 class PageController: UIPageViewController, UIPageViewControllerDataSource {
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         dataSource = self
-        
         
         
         
@@ -32,8 +32,8 @@ class PageController: UIPageViewController, UIPageViewControllerDataSource {
     
     private lazy var orderedViewControllers: [UIViewController] = {
         return [self.newViewController(name: "First"),
-                self.newViewController(name: "Second"),
-                self.newViewController(name: "Third")]
+                self.newViewController(name: "First"),
+                self.newViewController(name: "First")]
     }()
     
     private func newViewController(name: String) -> UIViewController {
@@ -41,10 +41,6 @@ class PageController: UIPageViewController, UIPageViewControllerDataSource {
             instantiateViewController(withIdentifier: "\(name)")
     }
 
-    
-    
-    
-    
     
     func presentationCount(for pageViewController: UIPageViewController) -> Int {
         return orderedViewControllers.count
@@ -55,7 +51,6 @@ class PageController: UIPageViewController, UIPageViewControllerDataSource {
             let firstViewControllerIndex = orderedViewControllers.index(of: firstViewController) else {
                 return 0
         }
-        
         return firstViewControllerIndex
     }
     
@@ -63,6 +58,7 @@ class PageController: UIPageViewController, UIPageViewControllerDataSource {
         guard let viewControllerIndex = orderedViewControllers.index(of: viewController) else {
             return nil
         }
+        pageIndex.value -= 1
         
         let previousIndex = viewControllerIndex - 1
         
@@ -81,6 +77,8 @@ class PageController: UIPageViewController, UIPageViewControllerDataSource {
         guard let viewControllerIndex = orderedViewControllers.index(of: viewController) else {
             return nil
         }
+        
+        pageIndex.value += 1
         
         let nextIndex = viewControllerIndex + 1
         let orderedViewControllersCount = orderedViewControllers.count

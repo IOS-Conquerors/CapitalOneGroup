@@ -13,6 +13,7 @@
 		04DE1B2E200A9E3D004E05F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04DE1B2D200A9E3D004E05F4 /* Assets.xcassets */; };
 		04DE1B31200A9E3D004E05F4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04DE1B2F200A9E3D004E05F4 /* LaunchScreen.storyboard */; };
 		04DE1B3D200A9ED3004E05F4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DE1B3C200A9ED3004E05F4 /* Constants.swift */; };
+		04DE1B3F200AD89E004E05F4 /* PersonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DE1B3E200AD89E004E05F4 /* PersonController.swift */; };
 		A80324CDD0D3EA99DB698997 /* Pods_CapitalOneRxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DC767F3C3C892F237FFD64D /* Pods_CapitalOneRxSwift.framework */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +26,7 @@
 		04DE1B30200A9E3D004E05F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		04DE1B32200A9E3D004E05F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04DE1B3C200A9ED3004E05F4 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		04DE1B3E200AD89E004E05F4 /* PersonController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonController.swift; sourceTree = "<group>"; };
 		4CF83793E25C32439E960515 /* Pods-CapitalOneRxSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CapitalOneRxSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-CapitalOneRxSwift/Pods-CapitalOneRxSwift.release.xcconfig"; sourceTree = "<group>"; };
 		4DC767F3C3C892F237FFD64D /* Pods_CapitalOneRxSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CapitalOneRxSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5E481D1DB96055E676D6662 /* Pods-CapitalOneRxSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CapitalOneRxSwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CapitalOneRxSwift/Pods-CapitalOneRxSwift.debug.xcconfig"; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 			children = (
 				04DE1B28200A9E3D004E05F4 /* PageController.swift */,
 				04DE1B3B200A9E80004E05F4 /* PageModel */,
+				04DE1B3E200AD89E004E05F4 /* PersonController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -258,6 +261,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04DE1B3F200AD89E004E05F4 /* PersonController.swift in Sources */,
 				04DE1B29200A9E3D004E05F4 /* PageController.swift in Sources */,
 				04DE1B27200A9E3D004E05F4 /* AppDelegate.swift in Sources */,
 				04DE1B3D200A9ED3004E05F4 /* Constants.swift in Sources */,
