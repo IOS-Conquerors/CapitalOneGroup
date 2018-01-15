@@ -18,6 +18,7 @@ class PersonController:UIViewController{
         case 0:
             print(Constants.lowNumber)
             //call network with lowNumber
+            //self.performSegue(withIdentifier: "toCreditNameView", sender: self)
             break
         case 1:
             print(Constants.medNumber)
@@ -33,7 +34,10 @@ class PersonController:UIViewController{
         }
     }
     
-    
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        guard let vc = segue.destination as? CreditCardView else {return}
+//
+//    }
     
     
     override func viewDidLoad() {
