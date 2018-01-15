@@ -13,4 +13,5 @@ class Constants{
     static let lowNumber = "666666666"
     static let medNumber = "777777777"
     static let highNumber = "888888888"
+    static let CreditDescriptionTitle = ["Card Name", "Product Type", "Brand Name", "Category Tags", "Marketing", "Credit Rating", "Active From", "Benifits", "Fraud Coverage", "Late Payment Fee", "Cash Advance", "Minimum Deposit"]
 }

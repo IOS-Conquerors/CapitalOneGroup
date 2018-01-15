@@ -122,6 +122,14 @@
 			path = Delegate;
 			sourceTree = "<group>";
 		};
+		04360DE5200C9ACB006E9687 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				04D3DF06200C2468005D9200 /* CreditCardModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		04D536AA200B386800067D37 /* CustomCells */ = {
 			isa = PBXGroup;
 			children = (
@@ -206,8 +214,8 @@
 			isa = PBXGroup;
 			children = (
 				04DE1B42200B082C004E05F4 /* CreditCardView.swift */,
-				04D3DF06200C2468005D9200 /* CreditCardModel.swift */,
 				04360DDC200C799F006E9687 /* CreditCardDetailView.swift */,
+				04360DE5200C9ACB006E9687 /* Model */,
 			);
 			path = CreditCardView;
 			sourceTree = "<group>";
