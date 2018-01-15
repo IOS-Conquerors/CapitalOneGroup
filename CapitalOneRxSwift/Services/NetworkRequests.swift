@@ -27,26 +27,33 @@
  }
  
  Example call to get Prequalifications
- NetworkRequests.makeCall(.getPrequalifications, nil) { (returnType, error) in
+ --This function also needs a taxId to complete the call
+ let taxId = "777777777"
+ NetworkRequests.makeCall(.getPrequalifications, taxId) { (returnType, error) in
     guard error == nil else {
         print(error!.localizedDescription)
         return
     }
+    guard let returnType = returnType else {return}
+        switch returnType {
+            case .cardOverviews(let cards): print(cards)
+            default: break
+        }
     print("finished call")
  }
-**********/
+ **********/
 
 import Foundation
 
 class NetworkRequests {
     //Public function that acts as a facade for Network Calls.
     //Can be subclassed and overriden to make a new facade if desired
-    public class func makeCall(_ callType:CallType, _ url: String?, completion: @escaping (ReturnType?, Error?) -> ()) {
+    public class func makeCall(_ callType:CallType, _ taxId: String?, completion: @escaping (ReturnType?, Error?) -> ()) {
         //Check if there is not an accessToken yet
         guard UserDefaults.standard.string(forKey: "accessToken") != nil else {
             getAccessToken() {
                 print("got access key")
-                makeCall(callType, url, completion: completion)
+                makeCall(callType, taxId, completion: completion)
             }
             return
         }
@@ -63,7 +70,9 @@ class NetworkRequests {
         //Makes Call to API
         switch callType {
         case .allCardNames: getAllCardNames(request, completion: completion)
-        case .getPrequalifications: getPrequalifications(request, "666666666", completion: completion)
+        case .getPrequalifications:
+            guard let taxId = taxId else {return}
+            getPrequalifications(request, taxId, completion: completion)
         }
     }
 }
@@ -161,61 +170,44 @@ extension PrivateNetworkFunctions {
         request.url = url
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         let customer = CustomerInfo(taxId)
-        print(customer)
         do {
             let data:Data = try JSONEncoder().encode(customer)
             request.httpBody = data
         } catch {
             print("error making request body")
+            completion(nil, nil)
         }
-        /*let bodyString = ["firstName": "Rose", "lastName": "Dean", "address": ["addressLine1": "88 Suffolk St", "city": "Springfield", "stateCode": "MA", "postalCode": "01109", "countryCode": "US"], "taxId": "555555555", "dateOfBirth": "1964-11-12"] as [String : Any]
-        print(bodyString)
-        do {
-            request.httpBody = try JSONSerialization.data(withJSONObject: bodyString, options: .prettyPrinted)
-        } catch {}*/
         URLSession.shared.dataTask(with: request) {
             (data, response, error) in
-            print("inside data task")
             guard error == nil else {
-                print("error")
                 completion(nil, error)
                 return
             }
             guard let statusCode = (response as? HTTPURLResponse)?.statusCode else {
-                print("there is no response")
                 completion(nil, NetworkError.noResponse)
                 return
             }
             guard statusCode == 200 else {
-                print("status code \(statusCode)")
                 completion(nil, NetworkError.statusCode(statusCode))
                 return
             }
             guard let data = data else {
-                print("no data")
                 completion(nil, NetworkError.noData)
                 return
             }
-            print(data)
-            /*guard let jsonObject = try? JSONSerialization.jsonObject(with: data) else {
-                print("object parsing")
-                completion(nil, NetworkError.errorParsingData)
-                return
-            }
-            guard let json = jsonObject as? [String:Any] else {
-                print("json error")
-                completion(nil, NetworkError.errorParsingData)
-                return
-            }*/
-            //let planetList:PlanetList = try JSONDecoder().decode(PlanetList.self, from: data)
+            var cards = [CardOverview]()
             do {
-                let cardList:CardList = try JSONDecoder().decode(CardList.self, from: data)
-                print(cardList)
+                let productList:ProductList = try JSONDecoder().decode(ProductList.self, from: data)
+                let _ = productList.products.map{
+                    let card = CardOverview(name: $0.productDisplayName, url: $0.images[0].url)
+                    cards.append(card)
+                }
             } catch {
                 print("Can't decode")
                 completion(nil, nil)
             }
-            completion(nil, nil)
+            let returnData = ReturnType.cardOverviews(cards)
+            completion(returnData, nil)
         }.resume()
     }
 }

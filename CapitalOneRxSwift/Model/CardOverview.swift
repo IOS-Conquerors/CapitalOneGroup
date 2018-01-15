@@ -8,15 +8,7 @@
 
 import Foundation
 
-struct CardList: Codable {
-    var products: [CardOverview]
-}
-
-struct CardOverview: Codable {
-    var code: String
-    var images: imageURL
-}
-
-struct imageURL: Codable {
+struct CardOverview {
+    var name: String
     var url: String
 }

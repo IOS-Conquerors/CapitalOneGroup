@@ -10,5 +10,5 @@ import Foundation
 
 enum ReturnType {
     case allCardNames([String])
-    case secondType
+    case cardOverviews([CardOverview])
 }
