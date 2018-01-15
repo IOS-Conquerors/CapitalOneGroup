@@ -17,6 +17,7 @@ class CreditCardModel: CreditCardModelFunctions{
     //Make struct to hold stuff
     var cardInfoNameWithUrl = [CardOverview]()
     
+    
     weak var accessViewFunctions:CreditCardViewFunctions?
     init(_ delegate:CreditCardViewFunctions){
         self.accessViewFunctions = delegate
