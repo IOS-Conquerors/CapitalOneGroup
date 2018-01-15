@@ -25,6 +25,15 @@
         default: break
     }
  }
+ 
+ Example call to get Prequalifications
+ NetworkRequests.makeCall(.getPrequalifications, nil) { (returnType, error) in
+    guard error == nil else {
+        print(error!.localizedDescription)
+        return
+    }
+    print("finished call")
+ }
 **********/
 
 import Foundation
@@ -46,7 +55,7 @@ class NetworkRequests {
         guard let accessToken = UserDefaults.standard.string(forKey: "accessToken") else {return}
         guard let emptyURL = URL(string: "https://notarealurl.com") else {return}
         var request = URLRequest(url: emptyURL)
-        request.httpMethod = "GET"
+        request.httpMethod = "POST"
         request.addValue("Bearer \(accessToken)", forHTTPHeaderField: "Authorization")
         request.addValue("application/json;v=3", forHTTPHeaderField: "Accept")
         request.addValue("en-US", forHTTPHeaderField: "Accept-Language")
@@ -54,7 +63,7 @@ class NetworkRequests {
         //Makes Call to API
         switch callType {
         case .allCardNames: getAllCardNames(request, completion: completion)
-        default: break
+        case .getPrequalifications: getPrequalifications(request, "666666666", completion: completion)
         }
     }
 }
@@ -103,6 +112,7 @@ extension PrivateNetworkFunctions {
     //Gets all card names
     private static func getAllCardNames(_ request: URLRequest, completion: @escaping (ReturnType?, Error?)->()) {
         var request = request
+        request.httpMethod = "GET"
         guard let url = URL(string: "https://api-sandbox.capitalone.com/credit-offers/products?limit=50&offset=0") else {return}
         request.url = url
         URLSession.shared.dataTask(with: request) {
@@ -142,6 +152,63 @@ extension PrivateNetworkFunctions {
             }
             let returnData = ReturnType.allCardNames(cardNames)
             completion(returnData, nil)
+        }.resume()
+    }
+    //Gets the prequalifications for a specific user
+    private static func getPrequalifications(_ request: URLRequest, _ taxId: String, completion: @escaping (ReturnType?, Error?)->()) {
+        var request = request
+        guard let url = URL(string: "https://api-sandbox.capitalone.com/credit-offers/prequalifications") else {return}
+        request.url = url
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        let customer = CustomerInfo(taxId)
+        print(customer)
+        do {
+            let data:Data = try JSONEncoder().encode(customer)
+            request.httpBody = data
+        } catch {
+            print("error making request body")
+        }
+        /*let bodyString = ["firstName": "Rose", "lastName": "Dean", "address": ["addressLine1": "88 Suffolk St", "city": "Springfield", "stateCode": "MA", "postalCode": "01109", "countryCode": "US"], "taxId": "555555555", "dateOfBirth": "1964-11-12"] as [String : Any]
+        print(bodyString)
+        do {
+            request.httpBody = try JSONSerialization.data(withJSONObject: bodyString, options: .prettyPrinted)
+        } catch {}*/
+        URLSession.shared.dataTask(with: request) {
+            (data, response, error) in
+            print("inside data task")
+            guard error == nil else {
+                print("error")
+                completion(nil, error)
+                return
+            }
+            guard let statusCode = (response as? HTTPURLResponse)?.statusCode else {
+                print("there is no response")
+                completion(nil, NetworkError.noResponse)
+                return
+            }
+            guard statusCode == 200 else {
+                print("status code \(statusCode)")
+                completion(nil, NetworkError.statusCode(statusCode))
+                return
+            }
+            guard let data = data else {
+                print("no data")
+                completion(nil, NetworkError.noData)
+                return
+            }
+            print(data)
+            guard let jsonObject = try? JSONSerialization.jsonObject(with: data) else {
+                print("object parsing")
+                completion(nil, NetworkError.errorParsingData)
+                return
+            }
+            guard let json = jsonObject as? [String:Any] else {
+                print("json error")
+                completion(nil, NetworkError.errorParsingData)
+                return
+            }
+            print(json)
+            completion(nil, nil)
         }.resume()
     }
 }

@@ -10,5 +10,5 @@ import Foundation
 
 enum CallType {
     case allCardNames
-    case secondType
+    case getPrequalifications
 }

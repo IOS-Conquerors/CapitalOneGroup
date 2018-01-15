@@ -14,3 +14,4 @@ enum NetworkError: Error {
     case noData
     case errorParsingData
 }
+
