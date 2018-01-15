@@ -29,7 +29,6 @@ extension NetworkError: LocalizedError {
             return "Error: unable to parse your json!"
         case .invalidImage:
             return "Error: your data is not an image"
-            
         }
     }
 }
