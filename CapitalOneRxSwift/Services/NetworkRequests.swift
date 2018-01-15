@@ -73,9 +73,9 @@ class NetworkRequests {
         case .getPrequalifications:
             guard let taxId = info else {return}
             getPrequalifications(request, taxId, completion: completion)
-        case .downloadImage:
-            guard let url = info else {return}
-            downloadImage(url, completion: completion)
+        case .downloadImage: break
+            //guard let url = info else {return}
+            //downloadImage(url, completion: completion)
         }
     }
 }
@@ -214,14 +214,15 @@ extension PrivateNetworkFunctions {
         }.resume()
     }
     
-    static func downloadImage(_ url:String, completion:@escaping(ReturnType?,Error?)->()){
+    static func downloadImage(_ url:String, completion:@escaping(UIImage?,Error?)->()){
         guard let url = URL(string: url) else {return}
         let session = URLSession(configuration: .default)
         session.dataTask(with: url) {
             (data, response, error) in
             guard let data = data else {return}
             guard let image = UIImage(data: data) else {return}
-            completion(ReturnType.image(image), nil)
+            completion(image, nil)
+            //completion(ReturnType.image(image), nil)
         }
     }
 }
