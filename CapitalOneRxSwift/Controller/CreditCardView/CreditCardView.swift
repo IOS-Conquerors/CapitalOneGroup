@@ -9,23 +9,28 @@
 import UIKit
 
 
-class CreditCardView: UIViewController{
+class CreditCardView: UIViewController, CreditCardViewFunctions{
     @IBOutlet weak var tableView:UITableView!
-    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
         
     }
     
     
 }
 
+
+
+
 typealias TableFunctions = CreditCardView
 extension TableFunctions:UITableViewDelegate, UITableViewDataSource{
+    
+    func ViewReloadTableData(){
+        tableView.reloadData()
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
     }
@@ -35,11 +40,6 @@ extension TableFunctions:UITableViewDelegate, UITableViewDataSource{
         
         return CreditNameCell
     }
-    
-    
-    
-    
-    
     
     
 }
