@@ -71,8 +71,8 @@ extension TableFunctions:UITableViewDelegate, UITableViewDataSource{
         guard let CreditNameCell = tableView.dequeueReusableCell(withIdentifier: "CreditCellName") as? CreditcardNameCell else {fatalError("No cell")}
         guard let accessDetailModel = accessDetailModel else {fatalError("Never fails")}
         
-        CreditNameCell.layer.cornerRadius = 10
-        CreditNameCell.layer.borderWidth = 1
+        CreditNameCell.layer.cornerRadius = 30
+        CreditNameCell.layer.borderWidth = 5
         CreditNameCell.layer.borderColor = UIColor.white.cgColor
         CreditNameCell.backgroundColor = UIColor(red: 0/255, green: 116/255, blue: 172/255, alpha: 1.0)
         

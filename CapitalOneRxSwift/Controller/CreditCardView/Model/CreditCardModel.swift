@@ -10,12 +10,12 @@ import Foundation
 import RxSwift
 
 class CreditCardModel: CreditCardModelFunctions{
-    
     var Index = 0
     
     
     //Make struct to hold stuff
     var cardInfoNameWithUrl = [CardOverview]()
+    //Make another struct to hold all the descriptions
     
     
     weak var accessViewFunctions:CreditCardViewFunctions?
@@ -35,10 +35,9 @@ class CreditCardModel: CreditCardModelFunctions{
             switch returnType {
             case .cardOverviews(let cards):
                 self.cardInfoNameWithUrl = cards
-           //     print(cards)
+            print(cards)
             default: break
             }
-            print("finished call")
             
             DispatchQueue.main.async {
                 self.accessViewFunctions?.reloadTable()
