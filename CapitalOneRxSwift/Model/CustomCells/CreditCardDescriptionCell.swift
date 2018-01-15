@@ -10,7 +10,7 @@ import UIKit
 
 
 class CreditCardDescriptionCell:UITableViewCell{
-    @IBOutlet weak var CreditDescription:UITableViewCell! 
+    @IBOutlet weak var CreditDescription:UILabel! 
 }
 
 

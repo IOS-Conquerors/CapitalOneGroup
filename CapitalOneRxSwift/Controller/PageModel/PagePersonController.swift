@@ -10,7 +10,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-var pageIndex:Variable<Int> = Variable(0)
+let pageIndex:Variable<Int> = Variable(0)
 
 //This will be for the initial page controller that shows you the 3 different people you can click
 class PagePersonController: UIPageViewController, UIPageViewControllerDataSource {
@@ -25,6 +25,9 @@ class PagePersonController: UIPageViewController, UIPageViewControllerDataSource
                                animated: true,
                                completion: nil)
         }
+        
+        
+        
     }
     
     
