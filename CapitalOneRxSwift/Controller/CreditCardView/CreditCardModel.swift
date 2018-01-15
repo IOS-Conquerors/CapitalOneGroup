@@ -7,17 +7,30 @@
 //
 
 import Foundation
-
+import RxSwift
 
 class CreditCardModel: CreditCardModelFunctions{
     var Index = 0
+    var CreditDescriptionTitle = ["Card Name", "Product Type", "Brand Name", "Category Tags", "Marketing", "Credit Rating", "Active From", "Benifits", "Fraud Coverage", "Late Payment Fee", "Cash Advance", "Minimum Deposit"]
+    
+    //Make struct to hold stuff
+    
+    
+    weak var accessViewFunctions:CreditCardViewFunctions?
+    init(_ delegate:CreditCardViewFunctions){
+        self.accessViewFunctions = delegate
+    }
+    
+    func callNetworkForData(){
+        //This calls the data and stores it in a struct in here
+    }
     
     func getTitleCount() -> Int {
-        return 1
+        return CreditDescriptionTitle.count
     }
     
     func getTitleInSection(from index: Int) -> String {
-        return ""
+        return CreditDescriptionTitle[index]
     }
     
     func getCreditCardNameCount() -> Int {
@@ -28,11 +41,12 @@ class CreditCardModel: CreditCardModelFunctions{
         return ""
     }
     
-    func returnIndex() -> Int {
-        return 1
+    func returnIndex() -> Int { // may not need
+        return Index
     }
     
-    func setIndex(with index: Int) {
+    func setIndex(with index: Int) { // may not need
+        Index = index
         
     }
     
