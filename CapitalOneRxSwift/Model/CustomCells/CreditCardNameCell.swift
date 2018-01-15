@@ -25,24 +25,29 @@ class CreditcardNameCell:UITableViewCell{
         
         NetworkRequests.makeCall(.downloadImage(url)) {
             [weak self](returnType, error) in
-            print("Got image")
             guard error == nil else {
                 guard let error = error else {return}
                 print("Error: \(error.localizedDescription)")
                 return
             }
             guard let returnType = returnType else {return}
-            switch returnType {
+            switch returnType{
             case .image(let image):
                 GlobalCache.shared.CreditCardCache.setObject(image, forKey: url as NSString)
                 
                 DispatchQueue.main.async {
                     self?.CreditCardImage.image = image
                 }
-            default: break
+                
+                
+            default:
+                break
+                
             }
+            
         }
-    }
+    }// end load image
+    
     
     func getPlaceHolder(){
         self.CreditCardImage.image = #imageLiteral(resourceName: "placeholder")
