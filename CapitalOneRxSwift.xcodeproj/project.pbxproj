@@ -17,6 +17,7 @@
 		04DE1B3D200A9ED3004E05F4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DE1B3C200A9ED3004E05F4 /* Constants.swift */; };
 		04DE1B3F200AD89E004E05F4 /* PersonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DE1B3E200AD89E004E05F4 /* PersonController.swift */; };
 		04DE1B43200B082C004E05F4 /* CreditCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DE1B42200B082C004E05F4 /* CreditCardView.swift */; };
+		8464FA50200C5C51003F75BA /* CardOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8464FA4F200C5C51003F75BA /* CardOverview.swift */; };
 		84EF2EE4200B2E3100A5684B /* NetworkRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EF2EE3200B2E3100A5684B /* NetworkRequests.swift */; };
 		84EF2EE6200B574F00A5684B /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EF2EE5200B574F00A5684B /* NetworkError.swift */; };
 		84EF2EE8200B57C700A5684B /* CallType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EF2EE7200B57C700A5684B /* CallType.swift */; };
@@ -40,6 +41,7 @@
 		04DE1B42200B082C004E05F4 /* CreditCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardView.swift; sourceTree = "<group>"; };
 		4CF83793E25C32439E960515 /* Pods-CapitalOneRxSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CapitalOneRxSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-CapitalOneRxSwift/Pods-CapitalOneRxSwift.release.xcconfig"; sourceTree = "<group>"; };
 		4DC767F3C3C892F237FFD64D /* Pods_CapitalOneRxSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CapitalOneRxSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8464FA4F200C5C51003F75BA /* CardOverview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardOverview.swift; sourceTree = "<group>"; };
 		84EF2EE3200B2E3100A5684B /* NetworkRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequests.swift; sourceTree = "<group>"; };
 		84EF2EE5200B574F00A5684B /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		84EF2EE7200B57C700A5684B /* CallType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallType.swift; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 				04DE1B26200A9E3D004E05F4 /* AppDelegate.swift */,
 				04DE1B3C200A9ED3004E05F4 /* Constants.swift */,
 				84EF2EEB200C197D00A5684B /* CustomerInfo.swift */,
+				8464FA4F200C5C51003F75BA /* CardOverview.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -313,6 +316,7 @@
 				84EF2EE6200B574F00A5684B /* NetworkError.swift in Sources */,
 				04DE1B3F200AD89E004E05F4 /* PersonController.swift in Sources */,
 				04D536AE200B3CAD00067D37 /* CreditCardDescriptionCell.swift in Sources */,
+				8464FA50200C5C51003F75BA /* CardOverview.swift in Sources */,
 				84EF2EE4200B2E3100A5684B /* NetworkRequests.swift in Sources */,
 				84EF2EEA200B57F500A5684B /* ReturnType.swift in Sources */,
 				04DE1B29200A9E3D004E05F4 /* PagePersonController.swift in Sources */,

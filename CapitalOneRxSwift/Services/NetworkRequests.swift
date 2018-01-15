@@ -197,7 +197,7 @@ extension PrivateNetworkFunctions {
                 return
             }
             print(data)
-            guard let jsonObject = try? JSONSerialization.jsonObject(with: data) else {
+            /*guard let jsonObject = try? JSONSerialization.jsonObject(with: data) else {
                 print("object parsing")
                 completion(nil, NetworkError.errorParsingData)
                 return
@@ -206,8 +206,15 @@ extension PrivateNetworkFunctions {
                 print("json error")
                 completion(nil, NetworkError.errorParsingData)
                 return
+            }*/
+            //let planetList:PlanetList = try JSONDecoder().decode(PlanetList.self, from: data)
+            do {
+                let cardList:CardList = try JSONDecoder().decode(CardList.self, from: data)
+                print(cardList)
+            } catch {
+                print("Can't decode")
+                completion(nil, nil)
             }
-            print(json)
             completion(nil, nil)
         }.resume()
     }
