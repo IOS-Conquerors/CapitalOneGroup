@@ -80,6 +80,48 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		04360DE0200C900B006E9687 /* Structs */ = {
+			isa = PBXGroup;
+			children = (
+				8464FA51200C7691003F75BA /* ProductList.swift */,
+				8464FA4F200C5C51003F75BA /* CardOverview.swift */,
+				84EF2EEB200C197D00A5684B /* CustomerInfo.swift */,
+			);
+			path = Structs;
+			sourceTree = "<group>";
+		};
+		04360DE1200C9031006E9687 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				04DE1B26200A9E3D004E05F4 /* AppDelegate.swift */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		04360DE2200C9038006E9687 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				04DE1B3C200A9ED3004E05F4 /* Constants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		04360DE3200C903E006E9687 /* Cache */ = {
+			isa = PBXGroup;
+			children = (
+				8464FA55200C84B3003F75BA /* GlobalCache.swift */,
+			);
+			path = Cache;
+			sourceTree = "<group>";
+		};
+		04360DE4200C9052006E9687 /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				04D3DF04200C245F005D9200 /* Delegates.swift */,
+			);
+			path = Delegate;
+			sourceTree = "<group>";
+		};
 		04D536AA200B386800067D37 /* CustomCells */ = {
 			isa = PBXGroup;
 			children = (
@@ -132,13 +174,11 @@
 		04DE1B39200A9E4F004E05F4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				04360DE3200C903E006E9687 /* Cache */,
+				04360DE2200C9038006E9687 /* Constants */,
+				04360DE1200C9031006E9687 /* AppDelegate */,
+				04360DE0200C900B006E9687 /* Structs */,
 				04D536AA200B386800067D37 /* CustomCells */,
-				04DE1B26200A9E3D004E05F4 /* AppDelegate.swift */,
-				04DE1B3C200A9ED3004E05F4 /* Constants.swift */,
-				84EF2EEB200C197D00A5684B /* CustomerInfo.swift */,
-				8464FA4F200C5C51003F75BA /* CardOverview.swift */,
-				8464FA55200C84B3003F75BA /* GlobalCache.swift */,
-				8464FA51200C7691003F75BA /* ProductList.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -146,7 +186,7 @@
 		04DE1B3A200A9E6F004E05F4 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				04D3DF04200C245F005D9200 /* Delegates.swift */,
+				04360DE4200C9052006E9687 /* Delegate */,
 				04DE1B44200B0837004E05F4 /* CreditCardView */,
 				04DE1B3B200A9E80004E05F4 /* PageModel */,
 			);
