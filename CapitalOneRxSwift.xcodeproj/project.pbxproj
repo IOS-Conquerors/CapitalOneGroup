@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04360DDD200C799F006E9687 /* CreditCardDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04360DDC200C799F006E9687 /* CreditCardDetailView.swift */; };
 		04438222200C099C00AE6F48 /* CreditCardNameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D536AB200B387500067D37 /* CreditCardNameCell.swift */; };
 		04D3DF05200C245F005D9200 /* Delegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D3DF04200C245F005D9200 /* Delegates.swift */; };
 		04D3DF07200C2468005D9200 /* CreditCardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D3DF06200C2468005D9200 /* CreditCardModel.swift */; };
@@ -27,6 +28,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		04360DDC200C799F006E9687 /* CreditCardDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardDetailView.swift; sourceTree = "<group>"; };
 		04D3DF04200C245F005D9200 /* Delegates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Delegates.swift; sourceTree = "<group>"; };
 		04D3DF06200C2468005D9200 /* CreditCardModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreditCardModel.swift; sourceTree = "<group>"; };
 		04D536AB200B387500067D37 /* CreditCardNameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardNameCell.swift; sourceTree = "<group>"; };
@@ -153,6 +155,7 @@
 			children = (
 				04DE1B42200B082C004E05F4 /* CreditCardView.swift */,
 				04D3DF06200C2468005D9200 /* CreditCardModel.swift */,
+				04360DDC200C799F006E9687 /* CreditCardDetailView.swift */,
 			);
 			path = CreditCardView;
 			sourceTree = "<group>";
@@ -314,6 +317,7 @@
 			files = (
 				04DE1B43200B082C004E05F4 /* CreditCardView.swift in Sources */,
 				84EF2EE6200B574F00A5684B /* NetworkError.swift in Sources */,
+				04360DDD200C799F006E9687 /* CreditCardDetailView.swift in Sources */,
 				04DE1B3F200AD89E004E05F4 /* PersonController.swift in Sources */,
 				04D536AE200B3CAD00067D37 /* CreditCardDescriptionCell.swift in Sources */,
 				04D3DF07200C2468005D9200 /* CreditCardModel.swift in Sources */,

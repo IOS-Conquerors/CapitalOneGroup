@@ -9,7 +9,7 @@
 import Foundation
 
 
-protocol CreditCardModelFunctions{
+protocol CreditCardModelFunctions:class{
     func getTitleCount() -> Int
     func getTitleInSection(from index:Int) -> String
     
@@ -18,10 +18,12 @@ protocol CreditCardModelFunctions{
     
     func returnIndex() -> Int // for when they click on a cell it will reload the tableview with details
     func setIndex(with index:Int)
+    
+    func callNetworkForData()
 }
 
 
-protocol CreditCardViewFunctions{
+protocol CreditCardViewFunctions:class{
     func ViewReloadTableData()
     
 }
