@@ -15,8 +15,22 @@ struct ProductList: Codable {
 struct Product: Codable {
     var productDisplayName: String
     var images: [image]
+    var productType: String
+    var brandName: String
+    var categoryTags: [String]
+    var marketingCopy: [String]
+    var additionalMarketingCopy: [String]
+    var creditRating: [String]
+    var activeFrom: String
+    var primaryBenefitDescription: String
+    var fraudCoverage: String
+    var latePaymentFee: String
+    var cashAdvanceFee: String
+    var minimumDeposit: String
 }
 
 struct image: Codable {
     var url: String
 }
+
+
