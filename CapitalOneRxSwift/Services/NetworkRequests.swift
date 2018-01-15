@@ -25,19 +25,35 @@
         default: break
     }
  }
-**********/
+ 
+ Example call to get Prequalifications
+ --This function also needs a taxId to complete the call
+ let taxId = "777777777"
+ NetworkRequests.makeCall(.getPrequalifications, taxId) { (returnType, error) in
+    guard error == nil else {
+        print(error!.localizedDescription)
+        return
+    }
+    guard let returnType = returnType else {return}
+        switch returnType {
+            case .cardOverviews(let cards): print(cards)
+            default: break
+        }
+    print("finished call")
+ }
+ **********/
 
-import Foundation
+import UIKit
 
 class NetworkRequests {
     //Public function that acts as a facade for Network Calls.
     //Can be subclassed and overriden to make a new facade if desired
-    public class func makeCall(_ callType:CallType, _ url: String?, completion: @escaping (ReturnType?, Error?) -> ()) {
+    public class func makeCall(_ callType:CallType, _ info: String?, completion: @escaping (ReturnType?, Error?) -> ()) {
         //Check if there is not an accessToken yet
         guard UserDefaults.standard.string(forKey: "accessToken") != nil else {
             getAccessToken() {
                 print("got access key")
-                makeCall(callType, url, completion: completion)
+                makeCall(callType, info, completion: completion)
             }
             return
         }
@@ -46,7 +62,7 @@ class NetworkRequests {
         guard let accessToken = UserDefaults.standard.string(forKey: "accessToken") else {return}
         guard let emptyURL = URL(string: "https://notarealurl.com") else {return}
         var request = URLRequest(url: emptyURL)
-        request.httpMethod = "GET"
+        request.httpMethod = "POST"
         request.addValue("Bearer \(accessToken)", forHTTPHeaderField: "Authorization")
         request.addValue("application/json;v=3", forHTTPHeaderField: "Accept")
         request.addValue("en-US", forHTTPHeaderField: "Accept-Language")
@@ -54,7 +70,12 @@ class NetworkRequests {
         //Makes Call to API
         switch callType {
         case .allCardNames: getAllCardNames(request, completion: completion)
-        default: break
+        case .getPrequalifications:
+            guard let taxId = info else {return}
+            getPrequalifications(request, taxId, completion: completion)
+        case .downloadImage: break
+            //guard let url = info else {return}
+            //downloadImage(url, completion: completion)
         }
     }
 }
@@ -103,6 +124,7 @@ extension PrivateNetworkFunctions {
     //Gets all card names
     private static func getAllCardNames(_ request: URLRequest, completion: @escaping (ReturnType?, Error?)->()) {
         var request = request
+        request.httpMethod = "GET"
         guard let url = URL(string: "https://api-sandbox.capitalone.com/credit-offers/products?limit=50&offset=0") else {return}
         request.url = url
         URLSession.shared.dataTask(with: request) {
@@ -143,5 +165,64 @@ extension PrivateNetworkFunctions {
             let returnData = ReturnType.allCardNames(cardNames)
             completion(returnData, nil)
         }.resume()
+    }
+    //Gets the prequalifications for a specific user
+    private static func getPrequalifications(_ request: URLRequest, _ taxId: String, completion: @escaping (ReturnType?, Error?)->()) {
+        var request = request
+        guard let url = URL(string: "https://api-sandbox.capitalone.com/credit-offers/prequalifications") else {return}
+        request.url = url
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        let customer = CustomerInfo(taxId)
+        do {
+            let data:Data = try JSONEncoder().encode(customer)
+            request.httpBody = data
+        } catch {
+            print("error making request body")
+            completion(nil, nil)
+        }
+        URLSession.shared.dataTask(with: request) {
+            (data, response, error) in
+            guard error == nil else {
+                completion(nil, error)
+                return
+            }
+            guard let statusCode = (response as? HTTPURLResponse)?.statusCode else {
+                completion(nil, NetworkError.noResponse)
+                return
+            }
+            guard statusCode == 200 else {
+                completion(nil, NetworkError.statusCode(statusCode))
+                return
+            }
+            guard let data = data else {
+                completion(nil, NetworkError.noData)
+                return
+            }
+            var cards = [CardOverview]()
+            do {
+                let productList:ProductList = try JSONDecoder().decode(ProductList.self, from: data)
+                let _ = productList.products.map{
+                    let card = CardOverview(name: $0.productDisplayName, url: $0.images[0].url)
+                    cards.append(card)
+                }
+            } catch {
+                print("Can't decode")
+                completion(nil, nil)
+            }
+            let returnData = ReturnType.cardOverviews(cards)
+            completion(returnData, nil)
+        }.resume()
+    }
+    
+    static func downloadImage(_ url:String, completion:@escaping(UIImage?,Error?)->()){
+        guard let url = URL(string: url) else {return}
+        let session = URLSession(configuration: .default)
+        session.dataTask(with: url) {
+            (data, response, error) in
+            guard let data = data else {return}
+            guard let image = UIImage(data: data) else {return}
+            completion(image, nil)
+            //completion(ReturnType.image(image), nil)
+        }
     }
 }
