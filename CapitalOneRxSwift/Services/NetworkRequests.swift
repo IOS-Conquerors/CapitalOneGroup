@@ -43,17 +43,17 @@
  }
  **********/
 
-import Foundation
+import UIKit
 
 class NetworkRequests {
     //Public function that acts as a facade for Network Calls.
     //Can be subclassed and overriden to make a new facade if desired
-    public class func makeCall(_ callType:CallType, _ taxId: String?, completion: @escaping (ReturnType?, Error?) -> ()) {
+    public class func makeCall(_ callType:CallType, _ info: String?, completion: @escaping (ReturnType?, Error?) -> ()) {
         //Check if there is not an accessToken yet
         guard UserDefaults.standard.string(forKey: "accessToken") != nil else {
             getAccessToken() {
                 print("got access key")
-                makeCall(callType, taxId, completion: completion)
+                makeCall(callType, info, completion: completion)
             }
             return
         }
@@ -71,8 +71,11 @@ class NetworkRequests {
         switch callType {
         case .allCardNames: getAllCardNames(request, completion: completion)
         case .getPrequalifications:
-            guard let taxId = taxId else {return}
+            guard let taxId = info else {return}
             getPrequalifications(request, taxId, completion: completion)
+        case .downloadImage:
+            guard let url = info else {return}
+            downloadImage(url, completion: completion)
         }
     }
 }
@@ -209,5 +212,16 @@ extension PrivateNetworkFunctions {
             let returnData = ReturnType.cardOverviews(cards)
             completion(returnData, nil)
         }.resume()
+    }
+    
+    static func downloadImage(_ url:String, completion:@escaping(ReturnType?,Error?)->()){
+        guard let url = URL(string: url) else {return}
+        let session = URLSession(configuration: .default)
+        session.dataTask(with: url) {
+            (data, response, error) in
+            guard let data = data else {return}
+            guard let image = UIImage(data: data) else {return}
+            completion(ReturnType.image(image), nil)
+        }
     }
 }

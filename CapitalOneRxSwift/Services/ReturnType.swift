@@ -6,9 +6,10 @@
 //  Copyright © 2018 Ghost World. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 enum ReturnType {
     case allCardNames([String])
     case cardOverviews([CardOverview])
+    case image(UIImage)
 }

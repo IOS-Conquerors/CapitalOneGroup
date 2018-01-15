@@ -11,4 +11,5 @@ import Foundation
 enum CallType {
     case allCardNames
     case getPrequalifications
+    case downloadImage
 }
