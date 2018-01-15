@@ -12,6 +12,7 @@ import RxSwift
 
 class CreditCardView: UIViewController, CreditCardViewFunctions{
     @IBOutlet weak var tableView:UITableView!
+    @IBOutlet weak var descriptionLabel:UILabel!
     
     var SSN:String?
     
@@ -28,8 +29,14 @@ class CreditCardView: UIViewController, CreditCardViewFunctions{
         
         accessDetailModel?.callNetworkForData(with: SSN ?? "")
         
+        self.view.backgroundColor = UIColor.white
         tableView.rowHeight = 250
         
+        descriptionLabel.backgroundColor = UIColor(red: 0/255, green: 116/255, blue: 172/255, alpha: 1.0)
+      //  descriptionLabel.layer.cornerRadius = 10
+        //descriptionLabel.clipsToBounds = true
+        //descriptionLabel.layer.borderWidth = 1
+        //descriptionLabel.layer.borderColor = UIColor.white.cgColor
     } // end viewdidload
     
 }
@@ -64,8 +71,12 @@ extension TableFunctions:UITableViewDelegate, UITableViewDataSource{
         guard let CreditNameCell = tableView.dequeueReusableCell(withIdentifier: "CreditCellName") as? CreditcardNameCell else {fatalError("No cell")}
         guard let accessDetailModel = accessDetailModel else {fatalError("Never fails")}
         
+        CreditNameCell.layer.cornerRadius = 10
+        CreditNameCell.layer.borderWidth = 1
+        CreditNameCell.layer.borderColor = UIColor.white.cgColor
+        CreditNameCell.backgroundColor = UIColor(red: 0/255, green: 116/255, blue: 172/255, alpha: 1.0)
         
-        
+        CreditNameCell.getPlaceHolder()
         CreditNameCell.loadImage(from: accessDetailModel.getCreditCardImageUrl(from: indexPath.row))
         CreditNameCell.CreditCardName.text = accessDetailModel.getCreditCardName(from: indexPath.row)
         

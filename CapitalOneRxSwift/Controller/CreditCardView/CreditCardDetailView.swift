@@ -47,7 +47,7 @@ extension DetailTableFunctions:UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, willDisplayHeaderView view:UIView, forSection: Int) {
         if let headerTitle = view as? UITableViewHeaderFooterView {
             headerTitle.textLabel?.font = UIFont.boldSystemFont(ofSize: 22)
-            headerTitle.backgroundView?.backgroundColor = UIColor(red: 0/255, green: 79/255, blue: 170/255, alpha: 1.0)
+            headerTitle.backgroundView?.backgroundColor = UIColor(red: 0/255, green: 116/255, blue: 172/255, alpha: 1.0)
             headerTitle.textLabel?.textColor = UIColor.white
         }
     }
