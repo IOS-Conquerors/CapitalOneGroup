@@ -21,20 +21,24 @@ class CreditcardNameCell:UITableViewCell{
             self.CreditCardImage.image = image
             return
         }
-//        Networking.downloadImage(from: url){
-//            [weak self](image,error) in
-//            guard error == nil else {
-//                guard let error = error else {return}
-//                print("Error: \(error.localizedDescription)")
-//                self?.noImage()
-//                return
-//            }
-//            guard let image = image else {return}
-//            GlobalCache.shared.SpriteCache.setObject(image, forKey: url as NSString)
-//            DispatchQueue.main.async {
-//                self?.ObjectImage.image = image
-//            }
-//        }
+        
+        
+        NetworkRequests.downloadImage(url) {
+            [weak self](image, error) in
+            print("Got image")
+                guard error == nil else {
+                    guard let error = error else {return}
+                    print("Error: \(error.localizedDescription)")
+                    return
+                }
+            
+                guard let image = image else {return}
+                GlobalCache.shared.CreditCardCache.setObject(image, forKey: url as NSString)
+            
+                DispatchQueue.main.async {
+                    self?.CreditCardImage.image = image
+                }
+        }
     }
     
     func getPlaceHolder(){

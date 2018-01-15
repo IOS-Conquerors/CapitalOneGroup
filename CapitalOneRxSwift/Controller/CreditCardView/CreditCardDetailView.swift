@@ -11,6 +11,7 @@ import UIKit
 
 
 class CreditCardDetailView:UIViewController, CreditCardViewFunctions{
+    
     @IBOutlet weak var tableView:UITableView!
     
     weak var accessDetailModel:CreditCardModelFunctions?
@@ -30,7 +31,7 @@ class CreditCardDetailView:UIViewController, CreditCardViewFunctions{
 typealias DetailTableFunctions = CreditCardDetailView
 extension DetailTableFunctions:UITableViewDelegate, UITableViewDataSource{
     
-    func ViewReloadTableData() {
+    func reloadTable() {
         tableView.reloadData()
     }
     
