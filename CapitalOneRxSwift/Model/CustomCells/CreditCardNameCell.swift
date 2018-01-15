@@ -23,21 +23,24 @@ class CreditcardNameCell:UITableViewCell{
         }
         
         
-        NetworkRequests.downloadImage(url) {
-            [weak self](image, error) in
+        NetworkRequests.makeCall(.downloadImage(url)) {
+            [weak self](returnType, error) in
             print("Got image")
-                guard error == nil else {
-                    guard let error = error else {return}
-                    print("Error: \(error.localizedDescription)")
-                    return
-                }
-            
-                guard let image = image else {return}
+            guard error == nil else {
+                guard let error = error else {return}
+                print("Error: \(error.localizedDescription)")
+                return
+            }
+            guard let returnType = returnType else {return}
+            switch returnType {
+            case .image(let image):
                 GlobalCache.shared.CreditCardCache.setObject(image, forKey: url as NSString)
-            
+                
                 DispatchQueue.main.async {
                     self?.CreditCardImage.image = image
                 }
+            default: break
+            }
         }
     }
     

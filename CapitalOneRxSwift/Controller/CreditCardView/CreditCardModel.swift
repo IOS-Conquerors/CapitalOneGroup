@@ -26,7 +26,7 @@ class CreditCardModel: CreditCardModelFunctions{
     func callNetworkForData(with SSN:String){
         //This calls the data and stores it in a struct in here
         
-        NetworkRequests.makeCall(.getPrequalifications, SSN) { (returnType, error) in
+        NetworkRequests.makeCall(.getPrequalifications(SSN)) { (returnType, error) in
             guard error == nil else {
                 print(error!.localizedDescription)
                 return
