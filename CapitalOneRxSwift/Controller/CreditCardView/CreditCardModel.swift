@@ -10,6 +10,8 @@ import Foundation
 
 
 class CreditCardModel: CreditCardModelFunctions{
+    var Index = 0
+    
     func getTitleCount() -> Int {
         return 1
     }
