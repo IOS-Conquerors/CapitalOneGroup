@@ -33,10 +33,12 @@ class CreditcardNameCell:UITableViewCell{
             
                 guard let image = image else {return}
                 GlobalCache.shared.CreditCardCache.setObject(image, forKey: url as NSString)
-            
+                
                 DispatchQueue.main.async {
                     self?.CreditCardImage.image = image
                 }
+            default: break
+            }
         }
     }
     
