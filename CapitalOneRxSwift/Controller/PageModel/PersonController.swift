@@ -12,21 +12,25 @@ class PersonController:UIViewController{
     @IBOutlet weak var userImage:UIImageView!
     @IBOutlet weak var checkButton:UIButton!
     
+    var SSN = ""
+    
     @IBAction func checkButton(_ sender: Any) {
-        print("TEST: \(pageIndex.value)")
+        print("PageIndex: \(pageIndex.value)")
         switch pageIndex.value {
         case 0:
             print(Constants.lowNumber)
-            //call network with lowNumber
-            //self.performSegue(withIdentifier: "toCreditNameView", sender: self)
+            SSN = Constants.lowNumber
+            self.performSegue(withIdentifier: "toCreditNameView", sender: self)
             break
         case 1:
             print(Constants.medNumber)
-            //call network with medNumber
+            SSN = Constants.medNumber
+            self.performSegue(withIdentifier: "toCreditNameView", sender: self)
             break
         case 2:
             print(Constants.highNumber)
-            //call network with highNumber
+            SSN = Constants.highNumber
+            self.performSegue(withIdentifier: "toCreditNameView", sender: self)
             break
         default:
             print("Error")
@@ -34,10 +38,12 @@ class PersonController:UIViewController{
         }
     }
     
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        guard let vc = segue.destination as? CreditCardView else {return}
-//
-//    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let vc = segue.destination as? CreditCardView else {return}
+        
+        vc.SSN = SSN
+        
+    }
     
     
     override func viewDidLoad() {

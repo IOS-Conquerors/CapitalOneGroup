@@ -15,15 +15,16 @@ protocol CreditCardModelFunctions:class{
     
     func getCreditCardNameCount() -> Int
     func getCreditCardName(from index:Int) -> String
+    func getCreditCardImageUrl(from index:Int) -> String
     
     func returnIndex() -> Int // for when they click on a cell it will reload the tableview with details
     func setIndex(with index:Int)
     
-    func callNetworkForData()
+    func callNetworkForData(with SSN:String)
 }
 
 
 protocol CreditCardViewFunctions:class{
-    func ViewReloadTableData()
+    func reloadTable()
     
 }
