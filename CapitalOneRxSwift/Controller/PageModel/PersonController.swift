@@ -20,23 +20,29 @@ class PersonController:UIViewController{
         case 0:
             print(Constants.lowNumber)
             SSN = Constants.lowNumber
-            //call network with lowNumber
-            //self.performSegue(withIdentifier: "toCreditNameView", sender: self)
+            self.performSegue(withIdentifier: "toCreditNameView", sender: self)
             break
         case 1:
             print(Constants.medNumber)
             SSN = Constants.medNumber
-            //call network with medNumber
+            self.performSegue(withIdentifier: "toCreditNameView", sender: self)
             break
         case 2:
             print(Constants.highNumber)
             SSN = Constants.highNumber
-            //call network with highNumber
+            self.performSegue(withIdentifier: "toCreditNameView", sender: self)
             break
         default:
             print("Error")
             break
         }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let vc = segue.destination as? CreditCardView else {return}
+        
+        vc.SSN = SSN
+        
     }
     
     

@@ -223,6 +223,6 @@ extension PrivateNetworkFunctions {
             guard let image = UIImage(data: data) else {return}
             completion(image, nil)
             //completion(ReturnType.image(image), nil)
-        }
+        }.resume()
     }
 }
