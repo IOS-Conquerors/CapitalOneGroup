@@ -14,7 +14,7 @@ struct CreditCardProducts : Codable{
     var products:[Products]
 }
 
-struct Products{
+struct Products : Codable{
     var productId:String
     var productDisplayName:String
     var activeFrom:String
