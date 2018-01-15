@@ -1,5 +1,5 @@
 //
-//  CallType.swift
+//  CardOverview.swift
 //  CapitalOneRxSwift
 //
 //  Created by Admin on 1/14/18.
@@ -8,8 +8,7 @@
 
 import Foundation
 
-enum CallType {
-    case allCardNames
-    case getPrequalifications
-    case downloadImage
+struct CardOverview {
+    var name: String
+    var url: String
 }
