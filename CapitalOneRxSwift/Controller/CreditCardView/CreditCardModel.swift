@@ -16,8 +16,7 @@ class CreditCardModel: CreditCardModelFunctions{
     //Make struct to hold stuff
     
     
-    weak var accessViewFunctions:CreditCardViewFunctions!
-    
+    weak var accessViewFunctions:CreditCardViewFunctions?
     init(_ delegate:CreditCardViewFunctions){
         self.accessViewFunctions = delegate
     }

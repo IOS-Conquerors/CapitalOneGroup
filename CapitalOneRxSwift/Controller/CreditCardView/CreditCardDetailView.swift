@@ -13,7 +13,6 @@ import UIKit
 class CreditCardDetailView:UIViewController, CreditCardViewFunctions{
     @IBOutlet weak var tableView:UITableView!
     
-    
     weak var accessDetailModel:CreditCardModelFunctions?
     
     override func viewDidLoad() {
@@ -22,8 +21,6 @@ class CreditCardDetailView:UIViewController, CreditCardViewFunctions{
         
         
     }
-    
-    
     
     
 }
