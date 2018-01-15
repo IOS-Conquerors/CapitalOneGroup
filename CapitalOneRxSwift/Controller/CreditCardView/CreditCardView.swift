@@ -44,16 +44,27 @@ extension TableFunctions:UITableViewDelegate, UITableViewDataSource{
 
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let access = accessDetailModel else {print("Failed in number of rows!");return 1}
-        return access.getCreditCardNameCount() // call model and get count there
+        return accessDetailModel?.getCreditCardNameCount() ?? 1
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        accessDetailModel?.setIndex(with: indexPath.row)
+        self.performSegue(withIdentifier: "toCreditDetailView", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let vc = segue.destination as? CreditCardDetailView else {return}
+        vc.Index = accessDetailModel?.returnIndex() ?? 1 // test
+    }
+    
+    
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let CreditNameCell = tableView.dequeueReusableCell(withIdentifier: "CreditCellName") as? CreditcardNameCell else {fatalError("No cell")}
         guard let accessDetailModel = accessDetailModel else {fatalError("Never fails")}
-
-        print(accessDetailModel.getCreditCardName(from: indexPath.row))
-        print(accessDetailModel.getCreditCardImageUrl(from: indexPath.row))
+        
+        
         
         CreditNameCell.loadImage(from: accessDetailModel.getCreditCardImageUrl(from: indexPath.row))
         CreditNameCell.CreditCardName.text = accessDetailModel.getCreditCardName(from: indexPath.row)

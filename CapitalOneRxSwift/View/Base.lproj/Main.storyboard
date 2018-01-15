@@ -32,10 +32,10 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" allowsSelectionDuringEditing="YES" rowHeight="100" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="TKm-4x-mf4">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="separatorColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CreditCellName" rowHeight="400" id="4gN-lK-XNM" customClass="CreditcardNameCell" customModule="CapitalOneRxSwift" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFit" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="gray" hidesAccessoryWhenEditing="NO" indentationLevel="5" indentationWidth="10" reuseIdentifier="CreditCellName" rowHeight="400" id="4gN-lK-XNM" customClass="CreditcardNameCell" customModule="CapitalOneRxSwift" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="55.5" width="375" height="400"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4gN-lK-XNM" id="j3D-0g-Xio">
@@ -43,7 +43,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7KT-Xc-sTy">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="175"/>
+                                                    <rect key="frame" x="0.0" y="10" width="375" height="175"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="7KT-Xc-sTy" secondAttribute="height" multiplier="15:7" id="765-uE-t1m"/>
                                                         <constraint firstAttribute="height" constant="175" id="H42-rL-xnP"/>
@@ -51,15 +51,15 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Credit Card Name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FFR-Qs-F80">
-                                                    <rect key="frame" x="0.0" y="185" width="375" height="24"/>
+                                                    <rect key="frame" x="0.0" y="195" width="375" height="24"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                    <nil key="textColor"/>
+                                                    <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="FFR-Qs-F80" secondAttribute="trailing" id="Dkq-oa-cF3"/>
-                                                <constraint firstItem="7KT-Xc-sTy" firstAttribute="top" secondItem="j3D-0g-Xio" secondAttribute="top" id="HDz-qd-IeL"/>
+                                                <constraint firstItem="7KT-Xc-sTy" firstAttribute="top" secondItem="j3D-0g-Xio" secondAttribute="top" constant="10" id="HDz-qd-IeL"/>
                                                 <constraint firstAttribute="trailing" secondItem="7KT-Xc-sTy" secondAttribute="trailing" id="JM9-SF-iES"/>
                                                 <constraint firstItem="FFR-Qs-F80" firstAttribute="top" secondItem="7KT-Xc-sTy" secondAttribute="bottom" constant="10" id="MDs-53-jOL"/>
                                                 <constraint firstItem="7KT-Xc-sTy" firstAttribute="leading" secondItem="j3D-0g-Xio" secondAttribute="leading" id="Uix-82-LGr"/>
@@ -68,6 +68,8 @@
                                                 <constraint firstItem="FFR-Qs-F80" firstAttribute="leading" secondItem="j3D-0g-Xio" secondAttribute="leading" id="fRy-e0-X4k"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <inset key="separatorInset" minX="5" minY="0.0" maxX="15" maxY="0.0"/>
                                         <connections>
                                             <outlet property="CreditCardImage" destination="7KT-Xc-sTy" id="Y3M-rz-y0e"/>
                                             <outlet property="CreditCardName" destination="FFR-Qs-F80" id="hXs-xi-Nv2"/>
@@ -80,7 +82,8 @@
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="TKm-4x-mf4" firstAttribute="top" secondItem="t7E-VO-Zhi" secondAttribute="top" id="JIM-hz-MrZ"/>
                             <constraint firstItem="TKm-4x-mf4" firstAttribute="leading" secondItem="t7E-VO-Zhi" secondAttribute="leading" id="TL6-mC-1Bu"/>
@@ -109,7 +112,10 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="uDZ-33-k9q">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="sectionIndexColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="sectionIndexBackgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CreditCardDetailCell" id="2vZ-9K-qkx" customClass="CreditCardDescriptionCell" customModule="CapitalOneRxSwift" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
@@ -132,8 +138,9 @@
                                                 <constraint firstAttribute="bottomMargin" secondItem="R1Z-1U-tT9" secondAttribute="bottom" id="eNX-jn-avk"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
-                                            <outlet property="CreditDescription" destination="R1Z-1U-tT9" id="TOi-vD-5Rh"/>
+                                            <outlet property="CreditDescription" destination="R1Z-1U-tT9" id="sTg-uR-W95"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

@@ -25,7 +25,6 @@ class CreditcardNameCell:UITableViewCell{
         
         NetworkRequests.downloadImage(url) {
             [weak self](image, error) in
-            print("Got image")
                 guard error == nil else {
                     guard let error = error else {return}
                     print("Error: \(error.localizedDescription)")

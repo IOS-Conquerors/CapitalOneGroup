@@ -12,7 +12,7 @@ import RxSwift
 class CreditCardModel: CreditCardModelFunctions{
     
     var Index = 0
-    var CreditDescriptionTitle = ["Card Name", "Product Type", "Brand Name", "Category Tags", "Marketing", "Credit Rating", "Active From", "Benifits", "Fraud Coverage", "Late Payment Fee", "Cash Advance", "Minimum Deposit"]
+    
     
     //Make struct to hold stuff
     var cardInfoNameWithUrl = [CardOverview]()
@@ -50,11 +50,11 @@ class CreditCardModel: CreditCardModelFunctions{
     }
     
     func getTitleCount() -> Int {
-        return CreditDescriptionTitle.count
+        return Constants.CreditDescriptionTitle.count
     }
     
     func getTitleInSection(from index: Int) -> String {
-        return CreditDescriptionTitle[index]
+        return Constants.CreditDescriptionTitle[index]
     }
     
     func getCreditCardNameCount() -> Int {
