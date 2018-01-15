@@ -17,15 +17,12 @@ class PersonController:UIViewController{
         switch pageIndex.value {
         case 0:
             print(Constants.lowNumber)
-            //call network with lowNumber
             break
         case 1:
             print(Constants.medNumber)
-            //call network with medNumber
             break
         case 2:
             print(Constants.highNumber)
-            //call network with highNumber
             break
         default:
             print("Error")
@@ -44,27 +41,25 @@ class PersonController:UIViewController{
         checkButton.layer.borderWidth = 1
         checkButton.layer.borderColor = UIColor.black.cgColor
         
+
+    }
+    
+    func pictureInit(){
         _ = pageIndex.asObservable().subscribe {
             (onNext) in
             switch pageIndex.value{
             case 0:
                 self.userImage.image = #imageLiteral(resourceName: "Hobo")
-                //self.view.backgroundColor = UIColor.brown
+            //self.view.backgroundColor = UIColor.brown
             case 1:
                 self.userImage.image = #imageLiteral(resourceName: "BusinessMan")
-                //self.view.backgroundColor = UIColor.darkGray
+            //self.view.backgroundColor = UIColor.darkGray
             case 2:
                 self.userImage.image = #imageLiteral(resourceName: "CEO")
-                //self.view.backgroundColor = UIColor.darkGray
+            //self.view.backgroundColor = UIColor.darkGray
             default:
                 break
             }
-            
         }
-        
-        
-        
     }
-    
-    
 }
