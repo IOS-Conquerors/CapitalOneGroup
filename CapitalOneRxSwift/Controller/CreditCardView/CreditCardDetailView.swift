@@ -74,5 +74,4 @@ extension DetailTableFunctions:UITableViewDelegate, UITableViewDataSource{
     
     
     
-    
 }
