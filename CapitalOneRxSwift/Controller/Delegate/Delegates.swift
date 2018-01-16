@@ -21,6 +21,14 @@ protocol CreditCardModelFunctions:class{
     func setIndex(with index:Int)
     
     func callNetworkForData(with SSN:String)
+    
+    //************** Get details from functions
+    
+    func getCreditCardInformation() -> [Product]
+    
+    
+    
+    
 }
 
 

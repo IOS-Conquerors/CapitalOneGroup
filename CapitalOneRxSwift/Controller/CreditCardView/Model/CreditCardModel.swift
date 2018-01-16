@@ -9,12 +9,17 @@
 import Foundation
 import RxSwift
 
+//TODO: Change the return type form the network call to holdinformation var, change the cardinfo var into the holdinformation
+
 class CreditCardModel: CreditCardModelFunctions{
+
+    var holdInformationFromNetworkCall:[ProductList] = [ProductList]()
     var Index = 0
     
     
     //Make struct to hold stuff
     var cardInfoNameWithUrl = [CardOverview]()
+    
     //Make another struct to hold all the descriptions
     
     
@@ -47,6 +52,14 @@ class CreditCardModel: CreditCardModelFunctions{
         }
         
     }
+    
+    func getCreditCardInformation() -> [Product] {
+        
+        guard let Products = holdInformationFromNetworkCall.last?.products else {fatalError("Nothing from network call yet")}
+        
+        return Products
+    }
+    
     
     func getTitleCount() -> Int {
         return Constants.CreditDescriptionTitle.count
