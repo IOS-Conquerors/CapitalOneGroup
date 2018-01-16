@@ -27,8 +27,6 @@ struct Product: Codable {
  //   var latePaymentFee:[latePaymentFee]
     var cashAdvanceFee:String
     var minimumDeposit:String
-    var name: String
-    var url: String
 }
 
 struct image: Codable {

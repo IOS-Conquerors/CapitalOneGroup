@@ -16,8 +16,6 @@ class prepareCreditCardDescriptionCell{
         let CreditCardDescriptions:[Product] = accessModel.getCreditCardInformation()
         
         
-        cellID.CreditDescription.text = CreditCardDescriptions[indexPath.section].name
-        
         cellID.CreditDescription.text = CreditCardDescriptions[indexPath.section].productDisplayName
         
         cellID.CreditDescription.text = CreditCardDescriptions[indexPath.section].brandName
