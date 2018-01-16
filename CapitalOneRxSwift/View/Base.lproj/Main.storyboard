@@ -30,44 +30,42 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" allowsSelectionDuringEditing="YES" rowHeight="100" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="TKm-4x-mf4">
-                                <rect key="frame" x="10" y="125.5" width="355" height="541.5"/>
+                                <rect key="frame" x="0.0" y="126.5" width="375" height="540.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="separatorColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFit" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="gray" hidesAccessoryWhenEditing="NO" indentationLevel="5" indentationWidth="10" reuseIdentifier="CreditCellName" rowHeight="400" id="4gN-lK-XNM" customClass="CreditcardNameCell" customModule="CapitalOneRxSwift" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="55.5" width="355" height="400"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFit" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="gray" hidesAccessoryWhenEditing="NO" indentationLevel="5" indentationWidth="10" shouldIndentWhileEditing="NO" reuseIdentifier="CreditCellName" rowHeight="400" id="4gN-lK-XNM" customClass="CreditcardNameCell" customModule="CapitalOneRxSwift" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="55.5" width="375" height="400"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4gN-lK-XNM" id="j3D-0g-Xio">
-                                            <rect key="frame" x="0.0" y="0.0" width="355" height="399.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="399.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7KT-Xc-sTy">
-                                                    <rect key="frame" x="15" y="10" width="325" height="175"/>
+                                                    <rect key="frame" x="30" y="21" width="315" height="175"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="325" id="Xc4-tj-Uf1"/>
-                                                        <constraint firstAttribute="height" constant="175" id="uXB-Pg-rkH"/>
+                                                        <constraint firstAttribute="height" constant="175" id="zBI-UA-GCJ"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Credit Card Name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FFR-Qs-F80">
-                                                    <rect key="frame" x="15" y="195" width="325" height="24"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="325" id="aP8-mg-umf"/>
-                                                    </constraints>
+                                                    <rect key="frame" x="25" y="206" width="325" height="25"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                     <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
+                                                    <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="7KT-Xc-sTy" firstAttribute="top" secondItem="j3D-0g-Xio" secondAttribute="top" constant="10" id="8aZ-aF-6lD"/>
-                                                <constraint firstItem="7KT-Xc-sTy" firstAttribute="centerX" secondItem="j3D-0g-Xio" secondAttribute="centerX" id="DGD-b5-Eqp"/>
-                                                <constraint firstItem="FFR-Qs-F80" firstAttribute="leading" secondItem="j3D-0g-Xio" secondAttribute="leadingMargin" id="LPL-CD-SMb"/>
-                                                <constraint firstItem="FFR-Qs-F80" firstAttribute="top" secondItem="7KT-Xc-sTy" secondAttribute="bottom" constant="10" id="Pmt-d0-kAK"/>
-                                                <constraint firstItem="FFR-Qs-F80" firstAttribute="trailing" secondItem="j3D-0g-Xio" secondAttribute="trailingMargin" id="WhN-XX-DXI"/>
+                                                <constraint firstItem="FFR-Qs-F80" firstAttribute="top" secondItem="7KT-Xc-sTy" secondAttribute="bottom" constant="10" id="3cw-Tg-pUH"/>
+                                                <constraint firstItem="FFR-Qs-F80" firstAttribute="leading" secondItem="j3D-0g-Xio" secondAttribute="leadingMargin" constant="10" id="5Qe-k4-ZiP"/>
+                                                <constraint firstItem="7KT-Xc-sTy" firstAttribute="top" secondItem="j3D-0g-Xio" secondAttribute="topMargin" constant="10" id="9EY-Rm-h71"/>
+                                                <constraint firstItem="7KT-Xc-sTy" firstAttribute="leading" secondItem="j3D-0g-Xio" secondAttribute="leadingMargin" constant="15" id="DRO-u9-eFn"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="7KT-Xc-sTy" secondAttribute="trailing" constant="15" id="Nti-0s-J8V"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="FFR-Qs-F80" secondAttribute="trailing" constant="10" id="Os8-IZ-RSR"/>
+                                                <constraint firstItem="7KT-Xc-sTy" firstAttribute="centerX" secondItem="j3D-0g-Xio" secondAttribute="centerX" id="gzB-bK-W09"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <inset key="separatorInset" minX="5" minY="0.0" maxX="15" maxY="0.0"/>
                                         <connections>
                                             <outlet property="CreditCardImage" destination="7KT-Xc-sTy" id="Y3M-rz-y0e"/>
                                             <outlet property="CreditCardName" destination="FFR-Qs-F80" id="hXs-xi-Nv2"/>
@@ -80,22 +78,23 @@
                                 </connections>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="These are the cards that you are qualified for, please feel free to click on a card to receive more information about them." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wEN-XR-cgW">
-                                <rect key="frame" x="0.0" y="20" width="375" height="95.5"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="96.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
+                                <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="TKm-4x-mf4" firstAttribute="bottom" secondItem="t7E-VO-Zhi" secondAttribute="bottom" id="6ba-RL-a0v"/>
-                            <constraint firstItem="wEN-XR-cgW" firstAttribute="top" secondItem="t7E-VO-Zhi" secondAttribute="top" id="DeU-yD-VdB"/>
-                            <constraint firstItem="TKm-4x-mf4" firstAttribute="leading" secondItem="t7E-VO-Zhi" secondAttribute="leading" constant="10" id="doX-I0-FVd"/>
-                            <constraint firstItem="TKm-4x-mf4" firstAttribute="top" secondItem="wEN-XR-cgW" secondAttribute="bottom" constant="10" id="eO7-8U-2EO"/>
-                            <constraint firstItem="wEN-XR-cgW" firstAttribute="leading" secondItem="t7E-VO-Zhi" secondAttribute="leading" id="fy0-jY-XnJ"/>
-                            <constraint firstAttribute="trailing" secondItem="TKm-4x-mf4" secondAttribute="trailing" constant="10" id="kGO-T6-RKP"/>
-                            <constraint firstItem="t7E-VO-Zhi" firstAttribute="trailing" secondItem="wEN-XR-cgW" secondAttribute="trailing" id="wE9-gw-75d"/>
+                            <constraint firstItem="wEN-XR-cgW" firstAttribute="top" secondItem="t7E-VO-Zhi" secondAttribute="top" id="EGi-LV-AOe"/>
+                            <constraint firstItem="TKm-4x-mf4" firstAttribute="bottom" secondItem="t7E-VO-Zhi" secondAttribute="bottom" id="TNj-vs-Mh0"/>
+                            <constraint firstItem="TKm-4x-mf4" firstAttribute="leading" secondItem="t7E-VO-Zhi" secondAttribute="leading" id="aKf-Jv-hS6"/>
+                            <constraint firstItem="wEN-XR-cgW" firstAttribute="leading" secondItem="t7E-VO-Zhi" secondAttribute="leading" id="beS-Gu-dQ6"/>
+                            <constraint firstItem="TKm-4x-mf4" firstAttribute="top" secondItem="wEN-XR-cgW" secondAttribute="bottom" constant="10" id="lb4-54-aJJ"/>
+                            <constraint firstItem="wEN-XR-cgW" firstAttribute="trailing" secondItem="t7E-VO-Zhi" secondAttribute="trailing" id="qCQ-4T-7a6"/>
+                            <constraint firstItem="TKm-4x-mf4" firstAttribute="trailing" secondItem="t7E-VO-Zhi" secondAttribute="trailing" id="yIy-Sh-Bvu"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="t7E-VO-Zhi"/>
                     </view>

@@ -62,7 +62,8 @@ extension TableFunctions:UITableViewDelegate, UITableViewDataSource{
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let vc = segue.destination as? CreditCardDetailView else {return}
-        vc.Index = accessDetailModel?.returnIndex() ?? 1 // test
+        guard let Index = accessDetailModel?.returnIndex() else {return}
+        vc.CreditCardInformation = accessDetailModel?.getCreditCardInformation(with: Index)
     }
     
     

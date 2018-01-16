@@ -10,45 +10,41 @@ import UIKit
 
 class prepareCreditCardDescriptionCell{
     
-    //["Card Name", "Product Type", "Brand Name", "Category Tags", "Marketing", "Credit Rating", "Active From", "Benifits", "Fraud Coverage", "Late Payment Fee", "Cash Advance", "Minimum Deposit"]
+
     
-    func returnDetailCell(with cellID: CreditCardDescriptionCell, with accessModel:CreditCardModelFunctions, with indexPath:IndexPath) -> UITableViewCell{
-        let CreditCardDescriptions:[Product] = accessModel.getCreditCardInformation()
+    static func returnDetailCell(with cellID: CreditCardDescriptionCell, with indexPath:IndexPath, with info:Product) -> UITableViewCell{
         
         
-        cellID.CreditDescription.text = CreditCardDescriptions[indexPath.section].productDisplayName
-        
-        cellID.CreditDescription.text = CreditCardDescriptions[indexPath.section].brandName
-        
-        //cellID.CreditDescription.text = CreditCardDescriptions[indexPath.section].categoryTags
-        //This is an array
-        //cellID.CreditDescription.text = CreditCardDescriptions[indexPath.section].marketingCopy
-        //This is an array
-        //This has an extra markting
-        
-        //cellID.CreditDescription.text = CreditCardDescriptions[indexPath.section].creditRating
-        //This is an array
-        
-        cellID.CreditDescription.text = CreditCardDescriptions[indexPath.section].activeFrom
-        
-        cellID.CreditDescription.text = CreditCardDescriptions[indexPath.section].primaryBenefitDescription
-        
-        cellID.CreditDescription.text = CreditCardDescriptions[indexPath.section].fraudCoverage
-        
-        //cellID.CreditDescription.text = CreditCardDescriptions[indexPath.section].
-        //Add from pull
-        
-        cellID.CreditDescription.text = CreditCardDescriptions[indexPath.section].cashAdvanceFee
-        
-        cellID.CreditDescription.text = CreditCardDescriptions[indexPath.section].minimumDeposit
-        
+        switch indexPath.section {
+        case 0:
+            cellID.CreditDescription.text = info.productDisplayName
+        case 1:
+            cellID.CreditDescription.text = info.productType
+        case 2:
+            cellID.CreditDescription.text = info.brandName
+        case 3:
+            cellID.CreditDescription.text = info.categoryTags[indexPath.row]
+        case 4:
+            cellID.CreditDescription.text = info.marketingCopy[indexPath.row]
+        case 5:
+            cellID.CreditDescription.text = info.creditRating[indexPath.row]
+        case 6:
+            cellID.CreditDescription.text = info.activeFrom
+        case 7:
+            cellID.CreditDescription.text = info.primaryBenefitDescription
+        case 8:
+            cellID.CreditDescription.text = info.fraudCoverage
+        case 9:
+            cellID.CreditDescription.text = info.latePaymentFee.latePaymentFeeDescription
+        case 10:
+            cellID.CreditDescription.text = info.cashAdvanceFee
+        case 11:
+            cellID.CreditDescription.text = info.minimumDeposit
+        default:
+            break
+        }
         
         return cellID
-        
     }
-    
-    
-    
-    
     
 }

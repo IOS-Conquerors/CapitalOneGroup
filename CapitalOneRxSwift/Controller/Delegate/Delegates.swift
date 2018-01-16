@@ -24,7 +24,7 @@ protocol CreditCardModelFunctions:class{
     
     //************** Get details from functions
     
-    func getCreditCardInformation() -> [Product]
+    func getCreditCardInformation(with index:Int) -> Product
     
     
     
