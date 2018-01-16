@@ -11,5 +11,6 @@ import UIKit
 enum ReturnType {
     case allCardNames([String])
     case cardOverviews([CardOverview])
+    case products(ProductList)
     case image(UIImage)
 }

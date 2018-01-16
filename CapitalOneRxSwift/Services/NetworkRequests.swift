@@ -182,11 +182,12 @@ extension APICalls {
             guard let data = data else {return}
             do {
                 let productList:ProductList = try JSONDecoder().decode(ProductList.self, from: data)
-                print(productList)
+                let returnData = ReturnType.products(productList)
+                /*print(productList)
                 let cards = productList.products.map{
                     CardOverview(name: $0.productDisplayName, url: $0.images[0].url)
                 }
-                let returnData = ReturnType.cardOverviews(cards)
+                let returnData = ReturnType.cardOverviews(cards)*/
                 completion(returnData, nil)
             } catch {
                 completion(nil, NetworkError.errorParsingData)
