@@ -9,14 +9,13 @@
 import Foundation
 import RxSwift
 
+//TODO: Change the return type form the network call to holdinformation var, change the cardinfo var into the holdinformation
+
 class CreditCardModel: CreditCardModelFunctions{
+
+    var holdInformationFromNetworkCall:[Product]?// = [Product]()
+    
     var Index = 0
-    
-    
-    //Make struct to hold stuff
-    var cardInfoNameWithUrl = [CardOverview]()
-    //Make another struct to hold all the descriptions
-    
     
     weak var accessViewFunctions:CreditCardViewFunctions?
     init(_ delegate:CreditCardViewFunctions){
@@ -32,10 +31,12 @@ class CreditCardModel: CreditCardModelFunctions{
                 return
             }
             guard let returnType = returnType else {return}
+            
+            
+            
             switch returnType {
-            case .cardOverviews(let cards):
-                self.cardInfoNameWithUrl = cards
-            print(cards)
+            case .products(let product):
+                self.holdInformationFromNetworkCall = product.products
             default: break
             }
             
@@ -48,6 +49,13 @@ class CreditCardModel: CreditCardModelFunctions{
         
     }
     
+    func getCreditCardInformation(with index:Int) -> Product {
+        guard let Info = holdInformationFromNetworkCall else {fatalError("nil")}
+        return Info[index]
+        //return Products
+    }
+    
+    
     func getTitleCount() -> Int {
         return Constants.CreditDescriptionTitle.count
     }
@@ -57,15 +65,19 @@ class CreditCardModel: CreditCardModelFunctions{
     }
     
     func getCreditCardNameCount() -> Int {
-        return cardInfoNameWithUrl.count
+        guard let holdInformationFromNetworkCall = holdInformationFromNetworkCall else {return 1}
+        return holdInformationFromNetworkCall.count
     }
     
     func getCreditCardName(from index: Int) -> String {
-        return cardInfoNameWithUrl[index].name
+        guard let holdInformationFromNetworkCall = holdInformationFromNetworkCall else {return ""}
+        return holdInformationFromNetworkCall[index].productDisplayName
     }
     
     func getCreditCardImageUrl(from index:Int) -> String{
-        return cardInfoNameWithUrl[index].url
+        guard let holdInformationFromNetworkCall = holdInformationFromNetworkCall else {return ""}
+        guard let image = holdInformationFromNetworkCall[index].images.last else {return ""}
+        return image.url
     }
     
     func returnIndex() -> Int { // may not need

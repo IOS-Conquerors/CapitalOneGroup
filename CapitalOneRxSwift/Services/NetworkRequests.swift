@@ -52,7 +52,7 @@ class NetworkRequests {
     //Can be subclassed and overriden to make a new facade if desired
     public class func makeCall(_ callType:CallType, completion: @escaping (ReturnType?, Error?) -> ()) {
         
-        //Check if there is not an accessToken yet
+        /*//Check if there is not an accessToken yet
         guard UserDefaults.standard.string(forKey: "accessToken") != nil else {
             print("no access Token")
             guard let request = CallType.getToken.myURLRequest else {
@@ -62,7 +62,7 @@ class NetworkRequests {
             getAccessToken(request, completion: completion)
             //makeCall(callType, completion: completion)
             return
-        }
+        }*/
         
         print("Choosing call function")
         //Chooses Function to Make Call to API
@@ -182,10 +182,12 @@ extension APICalls {
             guard let data = data else {return}
             do {
                 let productList:ProductList = try JSONDecoder().decode(ProductList.self, from: data)
+                let returnData = ReturnType.products(productList)
+                /*print(productList)
                 let cards = productList.products.map{
                     CardOverview(name: $0.productDisplayName, url: $0.images[0].url)
                 }
-                let returnData = ReturnType.cardOverviews(cards)
+                let returnData = ReturnType.cardOverviews(cards)*/
                 completion(returnData, nil)
             } catch {
                 completion(nil, NetworkError.errorParsingData)
@@ -194,7 +196,7 @@ extension APICalls {
     }
     
     //Downloads an image
-    static func downloadImage(_ request: URLRequest, completion:@escaping(ReturnType?,Error?)->()){
+    private static func downloadImage(_ request: URLRequest, completion:@escaping(ReturnType?,Error?)->()){
         let imageSession = URLSession(configuration: .default)
         imageSession.invalidateAndCancel()
         imageSession.dataTask(with: request) {
